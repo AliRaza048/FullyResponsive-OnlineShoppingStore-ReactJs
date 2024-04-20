@@ -1,0 +1,392 @@
+
+header {
+  height: 2.7vmax;
+  background-color: black;
+  color: white;
+  border-bottom-left-radius: 1.7vmax;
+  border-bottom-right-radius: 1.7vmax;
+  box-shadow: 0vmax 0vmax 0.4vmax black;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: .7vh;
+  font-weight: bolder;
+  font-size: 1.5vmax;
+
+  position: relative;
+  overflow: hidden;
+}
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 50%;
+  height: 0.7vmax;
+  background: linear-gradient(to right, rgba(47, 0, 255, 0.3), rgba(0, 153, 255, 0.6), rgb(233, 11, 11, 0.3));
+  animation: moveGradient 3s infinite;
+}
+@keyframes moveGradient {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+    .div1chlid1{
+      letter-spacing: 0.1vw;
+      height: 4.5vmax;
+      justify-content: center;
+      /* align-items: center; */
+      display: flex;
+      padding: 0 4.5vw;
+      margin-top: 5px;
+      font-size: 3vh;
+      /* border-bottom: 2px solid #dadada; */
+    }
+      .link1{
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 2.5vmax;
+        text-shadow: .0625rem .0625rem .0625rem red;
+        
+      }
+
+      /* .div1child1_2{
+        padding: 0 2vw;
+      }
+        .link2{
+          color: black;
+          text-decoration: none;
+          font-weight: bold;
+        } */
+
+
+
+    .div1child2{
+      /* border-bottom: 2px solid #dadada; */
+      /* background-color: blueviolet; */
+      height: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.7vw;
+      /* margin-bottom: 2rem; */
+      margin-top: 20px;
+    }
+      .link3{
+        text-decoration: none;
+        color: black;
+        /* font-size: calc(0.8vmax + 0.6rem); */
+        font-size: 1.7vmax;
+        font-weight: bold;
+        
+        
+      }
+      .link3:hover{
+        text-decoration: underline;
+        /* text-underline-offset: 0.9rem; */
+        text-underline-offset: 1.2vmax;
+        text-decoration-thickness: 0.1rem;
+        text-shadow: .0125rem .0125rem .0125rem red;
+      }
+  .active{
+    color: black;
+    text-decoration: underline;
+    /* text-underline-offset: 0.9rem; */
+    text-underline-offset: 1.2vmax;
+    text-decoration-thickness: 0.1rem;
+    text-shadow: .0125rem .0125rem .0125rem red;
+  }
+  footer{
+    width: 100%;
+    /* min-height: 0vh; */
+    background-color: black;
+    color: white;
+    height: 100%;
+    border-top-left-radius: 2vmax;
+    border-top-right-radius: 2vmax;
+    box-shadow: 0vmax 0vmax 0.4vmax black;
+  }
+  footer .OLC{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5vmax;
+  }
+  footer .OLC div{
+    /* background-color: red; */
+    width: 27%;
+    height: 18vmax;
+    margin-top: 3vmax;
+  }
+  footer .OLC .ourmission{
+    margin-left: 5vmax;
+    margin-top: 4vmax;
+  }
+  footer .OLC .ourmission h3, footer .OLC .contactus h3{
+    display: flex;
+  }
+  footer .OLC .contactus{
+    margin-top: 4vmax;
+  }
+  footer .OLC .ourmission img, footer .OLC .contactus img{
+    width: 3.5vmax;
+    height: 2.5vmax;
+  }
+  footer .OLC p{
+    margin-top:-8px;
+  }
+  footer .OLC .logo{
+    text-align: center;
+    margin-top: 5vmax;
+  }
+  footer .OLC .logo img{
+    width: 17vmax;
+    height: 17vmax;
+  }
+  .social-links{
+    text-align: center;
+    margin-top: 30px;
+  }
+  .social-links img{
+    width: 50px;
+    height: 50px;
+  }
+  .copyright{
+    font-size: 1.5vmax;
+    margin-left: 7vmax;
+    margin-top: 15px;
+  }
+  .terms-and-conditions{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2vmax;
+    margin-left: 7vmax;
+    flex-wrap: wrap;
+    /* margin-bottom: 50px; */
+  }
+  .terms-and-condition-link{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5vmax;
+    /* margin-bottom: 50px; */
+  }
+  .terms-and-condition-link:hover{
+    color: cadetblue;
+  }
+
+  @media (max-width: 768px) {
+    .link1{
+      font-size: 2vmax;
+    }
+    footer{
+      height: 60vh;      
+    }
+    /* footer .OLC div{
+ 
+      width: 35%;
+      height: 18vmax;
+    } */
+    footer .OLC{
+      height: 23vmax;
+    }
+    footer .OLC .contactus{
+      margin-right: 13%;
+    }
+    footer .OLC p{
+      margin-top: -2px;
+    }
+    footer .OLC .logo img{
+      width: 80%;
+      height: 65%;
+      margin-top: 0.5rem;
+    }
+    footer .OLC .ourmission{
+      margin-left: 15px;
+    }
+    footer .OLC .ourmission, footer .OLC .contactus{
+      margin-top: 4vmax;
+    }
+    .copyright{
+      margin-left: 15px;
+    }
+    .terms-and-conditions{
+      margin-left: 15px;
+      gap: 10px;
+    }
+    .terms-and-condition-link:hover{
+      color: white;
+    }
+    .link3{
+      /* font-size: calc(0.8vmax + 0.6rem); */
+      font-size: 1.5vmax;
+      font-weight: bold;
+    }
+  }
+  @media (max-width: 480px) {
+    footer{
+      width: 100%;
+      /* min-height: 0vh; */
+      background-color: black;
+      color: white;
+      height: 100%;
+    }
+    footer .OLC{
+      display: flex;
+      flex-direction: column;
+      font-size: 2vmax;
+    }
+    footer .OLC div{
+      /* background-color: red; */
+      width: 75%;
+      margin-top: 3vmax;
+      margin-left: 13%;
+      text-align: center;
+    }
+    footer .OLC .ourmission{
+      margin-left: 13%;
+      /* margin-top: 45vmax; */
+    }
+
+    footer .OLC .ourmission h3, footer .OLC .contactus h3{
+      display: flex;
+      justify-content: center;
+    }
+
+    footer .OLC .contactus{
+      margin-top: 1vmax;
+    }
+    footer .OLC .ourmission img, footer .OLC .contactus img{
+      width: 3.5vmax;
+      height: 2.5vmax;
+    }
+
+    footer .OLC .logo{
+      text-align: center;
+      margin-top: 1vmax;
+      height: 200%;
+    }
+    footer .OLC .logo img{
+      width: 25vmax;
+      height: 25vmax;
+      /* border: 0.1vmax solid white; */
+      border-radius: 20px;
+      box-shadow:  1px 1px 10px rgb(62, 61, 61);
+     
+    }
+    .social-links{
+      margin-top: 48vmax;
+    }
+    .social-links img{
+      width: 50px;
+      height: 50px;
+    }
+    .copyright{
+      font-size: 1.7vmax;
+      text-align: center;
+    }
+    .terms-and-conditions{
+      display: flex;
+      justify-content: center;
+    }
+    .terms-and-condition-link{
+      text-decoration: none;
+      color: white;
+      font-size: 1.7vmax;
+    }
+  }
+
+  
+   
+
+/* .div1{
+  height: 5vh;
+  background-color: white;
+  border-bottom: 2px solid #dadada;
+}
+.div1 header{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: .5vh;
+  font-weight: bolder;
+  font-size: 1.5vmax;
+}
+.div1chlid1{
+  letter-spacing: 0.1vw;
+ 
+  height: 250%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 0 4vw;
+  font-size: 3vh;
+  border-bottom: 2px solid #dadada;
+  
+}
+.div1child1_2{
+  
+  padding: 0 2vw;
+}
+.link1{
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 6vh;
+  text-shadow: .0625rem .0625rem .0625rem red;
+}
+.link2{
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+} */
+
+
+
+
+
+
+/* .annoucement_bar{
+  background-color: black;
+  color: white;
+  text-align: center;
+  text-shadow: .0625rem .0625rem .0625rem white;
+  font-display: auto;
+}
+
+
+.logolink{
+  letter-spacing: 0.2rem;
+  color: black;
+  text-decoration: none;
+  text-shadow: .0625rem .0625rem .0625rem red; 
+}
+
+
+
+
+
+.links{
+  text-align: center;
+  font-size: calc(0.8rem + 1vmin);
+  font-weight: bold;
+}
+.link{
+  color: black;
+  text-decoration: none;
+  padding-left: 1rem;
+}
+.link:hover{
+  text-underline-offset: 0.8rem;
+  text-decoration-thickness: 0.1rem;
+  text-shadow: .0125rem .0125rem .0125rem red;
+}
+.active{
+  color: black;
+  text-decoration: underline;
+  text-underline-offset: 0.8rem;
+  text-decoration-thickness: 0.1rem;
+  text-shadow: .0125rem .0125rem .0125rem red;
+} */

@@ -1,0 +1,197 @@
+.productDetail{
+  padding: 3vmax;
+  padding-top: 7vmax;
+
+}
+.productimage{
+  width: 45vmax;
+  height: 35vmax;
+}
+.productDetail button {
+  border: none;
+  outline: 0;
+  padding: 0.8vmax;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 30vw;
+  font-size: 1.4vmax;
+}
+.productDetail .checkoutbutton{
+  border-radius: 10px;
+  background-color: limegreen;
+}
+.productDetail .addtocartbutton{
+  margin-bottom: 10px;
+}
+.productDetail button:hover {
+  opacity: 0.7;
+}
+.productDetail .whatsappbutton{
+  text-decoration: none;
+  margin-bottom: 15px;
+  background-color: green;
+  /* box-shadow: 0 0 2px 1px green; */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productDetail .whatsappbutton:hover{
+  box-shadow: 0 0 2px 2px green;
+  opacity: 0.9;
+}
+.description{
+  font-size: 30px;
+  font-weight:'bold';
+  margin-top:'50px'
+}
+.productDetail .productvideo{
+  width: 80%;
+  height: 40vmax;
+  /* margin: 0 auto; */
+  margin: 4vmax auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* Draw Text 2 Sided line code css */
+.text-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: .7rem;
+}
+.text-container .horizontal-line {
+  flex: 1;
+  height: 1px;
+  background-color: black;
+  margin: 0 2rem;
+}
+/* Draw Text 2 Sided line code css */
+/* "You May Also Like" section */
+.SuggestionsProduct--image {
+  width: 100%;
+  height: 20vmax;
+  object-fit: cover;
+}
+
+.SuggestionsCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* width: 15.3vmax; */
+  margin: auto 3rem;
+  text-align: center;
+  font-family: arial;
+  font-size: 1.2vmax;
+  font-weight: lighter;
+  border: 2vmax;
+  border-radius: 20vmax;
+  margin-bottom: 4vmax;
+}
+
+.SuggestionsName {
+  height: 1vmax;
+}
+
+.SuggestionsPrice {
+  color: grey;
+  font-size: 1.7vmax;
+  height: 1vmax;
+}
+
+.SuggestionsCard button {
+  border: none;
+  outline: 0;
+  padding: 0.8vmax;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.4vmax;
+}
+
+.SuggestionsCard button:hover {
+  opacity: 0.7;
+}
+.SuggestionsCard .SuggestionsProductDetailLink{
+  text-decoration: none;
+  color: black;
+}
+
+
+@media (max-width: 768px) {
+  .productDetail{
+    padding-top: 8.5vmax;  
+  }
+  .productimage{
+    width: 29vmax;
+    height: 26vmax;
+    padding-top: 4.5vmax;
+  }
+  .productDetail .checkoutbutton{
+    border-radius: 5px;
+    background-color: limegreen;
+    height: 1.3rem;
+  }
+  .productDetail .addtocartbutton{
+    margin-bottom: 5px;
+  }
+  .productDetail .whatsappbutton{
+    text-decoration: none;
+    margin-bottom: 5px;
+    background-color: green;
+    /* box-shadow: 0 0 2px 1px green; */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .description{
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  .productDetail .productvideo{
+    width: 100%;
+    height: 30vmax;
+    /* margin: 0 auto; */
+    margin: 4vmax auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* "You May Also Like" section */
+  .SuggestionsCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 22vmax;
+    margin: auto 0.7rem;
+    text-align: center;
+    font-family: arial;
+    font-size: 1.5vmax;
+    font-weight: lighter;
+    margin-bottom: 4vmax;
+  }
+  /* Draw Text 2 Sided line code css */
+.text-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: .7rem;
+}
+.text-container .horizontal-line {
+  flex: 1;
+  height: 1px;
+  background-color: black;
+  margin: 0 0.2rem;
+}
+/* Draw Text 2 Sided line code css */
+}
+
+

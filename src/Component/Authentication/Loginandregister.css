@@ -1,0 +1,155 @@
+.Background{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.loginimageside{
+  background-image: url('/src/Component/Images/loginformimage.png');
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+}
+.registerimageside{
+  background-image: url('/src/Component/Images/registerformimage.png');
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+}
+/* .imageside p{
+  font-size: large;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 70%;
+} */
+.formside{
+  background-color: white;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  
+}
+form{
+  margin-left: 7rem;
+  margin-top: 50px;
+}
+.formside label, input{
+  display: block;
+  margin-top: 10px;
+}
+form p{
+  padding: 15px;
+  /* padding-left: 10vw; */
+  text-align: center;
+  margin-left: -65px;
+}
+.formside form .wrapper input{
+  width: 75%;
+  height: 40px;
+  border-radius: 5px;
+  border-color: #f97c5c;
+  border-width: 1px;
+  border-top: 1px solid #e46545;
+  padding-left: 30px;
+}
+.formside form .wrapper input:hover{
+  box-shadow: 0 0 2px 1px #f26a49;
+}
+.wrapper {
+  position:relative;
+}
+.wrapper .ri-mail-line, .ri-lock-line, .ri-user-3-line {
+  padding: 4px;
+  position: absolute;
+  box-sizing:border-box;
+  top:50%;
+  left:2px;
+  transform: translateY(-50%);
+}
+.terms-pri{
+  margin-left: 10px;
+  margin-right:40px;
+}
+.formside form button{
+  width: 60%;
+  /* max-width: 500px; */
+  height: 40px;
+  background-color: #f26a49;
+  color: white;
+  font-size: large;
+  border: none;
+  border-radius: 5px;
+  margin-top: 2vmax;
+  margin-left: 12%;
+}
+.formside form button:hover{
+  box-shadow: 0 0 2px 1px #f26a49;
+  cursor: pointer;
+}
+.navlink{
+  text-decoration: none;
+  color: #e46545;
+  /* font-size: large; */
+  font-weight: bold;
+}
+.navlink:hover{
+  text-decoration: underline;
+  text-underline-offset: 0.5vmax;
+  text-shadow: .0125rem .0125rem .0125rem red;
+}
+
+
+/* Add this at the end of your CSS file */
+
+@media screen and (max-width: 768px) {
+  .Background {
+    flex-direction: column;
+  }
+
+  .loginimageside{
+    width: 100%;
+    height: 40vh; /* Adjust the height as needed */
+  }
+  .registerimageside {
+    width: 100%;
+    height: 40vh; /* Adjust the height as needed */
+  }
+
+  .formside {
+    width: 100%;
+    height: auto;
+  }
+
+  .loginimageside,
+  .registerimageside {
+    order: 1;
+  }
+
+  .formside {
+    order: 2;
+    border-radius: 25px;
+    margin-top: -20px;
+  }
+
+  .formside label{
+    margin-left: 0.1rem;
+  }
+  .formside form {
+    margin-left: 3rem;
+  }
+  form{
+    /* margin-left: 3em; */
+    margin-top: 10px;
+  }
+  .terms-pri{
+    font-size: smaller;
+  }
+  form p{
+  margin-top: 0px;
+}
+}

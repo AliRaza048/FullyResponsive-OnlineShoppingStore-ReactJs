@@ -1,0 +1,79 @@
+.background{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  }
+  .background .imageside{
+    background-image: url('/src/Component/Images/checkoutimage.jpg');
+    background-size: cover;
+    width: 50%;
+    height: 100%;
+  }
+  /* .imageside p{
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 70%;
+  } */
+
+  .background .checkoutformside{
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    
+  }
+  .background .checkoutformside h2{
+    text-align: center;
+  }
+  .background .checkoutformside form{
+    margin-left: 7rem;
+    margin-top: 0rem;
+  }
+  .background .checkoutformside form label, input{
+    display: block;
+    margin-top: 7px;
+  }
+  .background .checkoutformside form .wrapper input{
+    width: 75%;
+    height: 40px;
+    border-radius: 5px;
+    border-color: #f97c5c;
+    border-width: 1px;
+    border-top: 1px solid #e46545;
+    padding-left: 30px;
+  }
+  .background .checkoutformside form .wrapper input:hover{
+    box-shadow: 0 0 2px 1px #f26a49;
+  }
+  .background .checkoutformside form .wrapper {
+    position:relative;
+  }
+  .background .checkoutformside form .wrapper .ri-mail-line, .ri-home-heart-line, .ri-smartphone-line, .ri-whatsapp-line {
+    padding: 4px;
+    position: absolute;
+    box-sizing:border-box;
+    top:50%;
+    left:2px;
+    transform: translateY(-50%);
+  }
+  .background .checkoutformside form button{
+    width: 81%;
+    height: 40px;
+    background-color: #f26a49;
+    color: white;
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+  }
+  .background .checkoutformside form button:hover{
+    box-shadow: 0 0 2px 1px #f26a49;
+    cursor: pointer;
+  }

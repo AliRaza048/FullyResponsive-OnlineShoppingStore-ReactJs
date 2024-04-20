@@ -1,0 +1,60 @@
+/* Searchproduct.css */
+
+.search-products-container {
+    position: relative;
+    margin-top: -12px;
+  }
+  .searchbar{
+    width: 17vw;
+    height: 2vmax;
+    font-size: 70%;
+    border-radius: 0.5vmax;
+    /* border-top: none; */
+    /* border-left: none; */
+    /* border-right: none; */
+    /* border-bottom: 0.1vmax solid #9798f6; */
+    border: 0.1vmax solid black;
+    text-align: center;
+  }
+  
+  .item-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* width: 200%; */
+    max-width: fit-content;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 490px;
+    overflow-y: auto;
+    z-index: 2; 
+  }
+  
+  .search-products-item {
+    padding: 8px;
+    /* cursor: pointer; */
+  }
+  .search-products-container.show-list .item-list {
+    display: block;
+  }
+
+  
+  .item-list::-webkit-scrollbar {
+    width: 0.5em;
+}
+@media (max-width: 768px) {
+  .searchbar{
+    width: 25vw;
+    height: 2vmax;
+    border: 0.1vmax solid black;
+  }
+}
+
+/* .item-list::-webkit-scrollbar-thumb {
+    background-color: #888; 
+} */
+
+  

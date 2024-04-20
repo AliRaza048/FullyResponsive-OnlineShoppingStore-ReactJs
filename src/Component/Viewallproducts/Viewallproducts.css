@@ -1,0 +1,23 @@
+.view-all-products{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15vmax, 1fr));
+  column-gap: 20px;
+  row-gap: 35px;
+  padding: 1.5vmax;
+  padding-top: 8vmax;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .view-all-products{
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  gap: 0px;
+  padding: 0vmax;
+  margin-top: 0px;
+  padding-top: 60px;
+  margin-left: 5px;
+  margin-right: 5px;
+  row-gap: 15px;
+  margin-bottom: 30px;
+}
+}

@@ -1,0 +1,96 @@
+/* .numbered-list {
+    list-style-type: decimal; 
+  } */
+.cart-container {
+    padding: 10px;
+    min-height: 30vh;
+  }
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cart-table th, .cart-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    /* text-align: left; */
+    text-align: center;
+  }
+  
+  .cart-table th {
+    background-color: #f2f2f2;
+  }
+  .decrementbutton, .incrementbutton{
+    border-radius: 30%;
+    margin: 2px;
+    border-color: green;
+    background-color: green;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    border: none;
+  }
+  .decrementbutton, .incrementbutton, .removebutton:hover{
+    cursor: pointer;
+  }
+  .removebutton{
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+  }
+
+  .fulltotalprice{
+    text-align: end;
+    margin-right: 5%;
+    font-weight: bold;
+    font-size: large;
+    margin-top: 10px;
+  }
+
+  .checkoutbutton{
+    margin-right: 1%;
+    width: 100px;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color: green;
+    color: white;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .cart-table td {
+      padding: 0.3vw;
+      font-size: small;
+    }
+    .cart-table th{
+      padding: 0.5vw;
+      font-size: small;
+    }
+    .decrementbutton, .incrementbutton{
+      border-color: #3fd168;
+      background-color: #3fd168;
+      font-size: small;
+      padding: 3px 6px;
+    }
+    .removebutton{
+      background-color: #e65b65;
+      font-size: small;
+      padding: 3px 6px;
+    }
+    .checkoutbutton{
+      background-color: #3fd168;
+      font-size: small;
+      padding: 3px 6px;
+    }
+    .fulltotalprice{
+      font-size: smaller;
+    }
+    
+  }
+  

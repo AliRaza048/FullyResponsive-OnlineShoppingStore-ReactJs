@@ -1,0 +1,61 @@
+.Part1{
+  /* background-color: aqua; */
+  padding: 3%;
+  padding-top: 30%;
+}
+.Part1 h3{
+  text-align: center;
+  color: black;
+  font-size: 2vmax;
+  text-shadow: .0625rem .0625rem .0625rem red;
+}
+
+/* Draw Text 2 Sided line code css */
+.Part1 .text-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: .7rem;
+}
+.Part1 .text-container .horizontal-line {
+  flex: 1;
+  height: 1px;
+  background-color: black;
+  margin: 0 .6rem;
+}
+/* Draw Text 2 Sided line code css */
+
+.Part1 p .view_all_top_collections_link, .Part1 .view_all_electronics_collection_link, .Part1 .view_all_home_improvement_link{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2vmax;
+  position: absolute;
+  right: 0;
+}
+.Part1 p .view_all_top_collections_link{
+  padding: 0.7rem;
+  margin: 0 4%;
+  color: rgb(239, 97, 46);
+}
+.Part1 .view_all_electronics_collection_link, .Part1 .view_all_home_improvement_link{
+  margin: 0 5%;
+  margin-top: -3%;
+  color: rgb(239, 97, 46);
+}
+.Part1 p .view_all_top_collections_link, .Part1 .view_all_electronics_collection_link, .Part1 .view_all_home_improvement_link:hover{
+  text-shadow: .0125rem .0125rem .0125rem red;
+}
+@media (max-width: 768px) {
+.Part1 .text-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: .7rem;
+}
+.Part1 .text-container .horizontal-line {
+  flex: 1;
+  height: 1px;
+  background-color: black;
+  margin: 0 -0.1rem;
+}
+}
