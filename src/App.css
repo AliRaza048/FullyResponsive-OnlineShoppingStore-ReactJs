@@ -12,6 +12,7 @@ header {
   padding-top: .7vh;
   font-weight: bolder;
   font-size: 1.5vmax;
+  font-family: cursive;
 
   position: relative;
   overflow: hidden;
@@ -22,9 +23,9 @@ header::after {
   bottom: 0;
   left: -100%;
   width: 50%;
-  height: 0.7vmax;
-  background: linear-gradient(to right, rgba(47, 0, 255, 0.3), rgba(0, 153, 255, 0.6), rgb(233, 11, 11, 0.3));
-  animation: moveGradient 3s infinite;
+  height: 0.12vmax;
+  background: linear-gradient(90deg, transparent, #f5540f, #f5540f, #f5540f, #f5540f, transparent);
+  animation: moveGradient 4s infinite;
 }
 @keyframes moveGradient {
   0% {
@@ -34,6 +35,7 @@ header::after {
     left: 100%;
   }
 }
+
     .div1chlid1{
       letter-spacing: 0.1vw;
       height: 4.5vmax;
@@ -49,10 +51,47 @@ header::after {
         color: black;
         text-decoration: none;
         font-weight: bold;
-        font-size: 2.5vmax;
-        text-shadow: .0625rem .0625rem .0625rem red;
+        font-size: 3vmax;
+        margin-top: 10px;
+        margin-left: 5vmax;
+        /* text-shadow: .0625rem .0625rem .0625rem red; */
+        font-family: cursive;
+
+        background: linear-gradient(-45deg, #e600ff 0%, #00b7ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;    
+
+        position: relative;
+        display: inline-block;
+        transform-style: preserve-3d;
+        perspective: 500px;
+        animation: toggle_animation 5s infinite;
         
+        transition: filter 0.3s ease; /* Add transition for filter property */
       }
+      .link1:hover {
+        filter: brightness(150%); /* Increase brightness on hover */
+      }
+      .link1::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        filter: blur(20px);
+        z-index: -1;
+        border-radius: 50px;
+      }
+      @keyframes toggle_animation {
+        0%, 100% {
+          transform: translateY(-10px) rotateX(15deg) rotateY(-20deg);
+        }
+        50% {
+          transform: translateY(0px) rotateX(15deg) rotateY(-20deg);
+        }
+      }
+
 
       /* .div1child1_2{
         padding: 0 2vw;
@@ -90,15 +129,22 @@ header::after {
         /* text-underline-offset: 0.9rem; */
         text-underline-offset: 1.2vmax;
         text-decoration-thickness: 0.1rem;
+
+        /* background: linear-gradient(-45deg, #e30cfa 0%, #14bafc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;  */
         text-shadow: .0125rem .0125rem .0125rem red;
+        
       }
   .active{
     color: black;
     text-decoration: underline;
+
     /* text-underline-offset: 0.9rem; */
     text-underline-offset: 1.2vmax;
     text-decoration-thickness: 0.1rem;
-    text-shadow: .0125rem .0125rem .0125rem red;
+
+    text-shadow: .0125rem .0125rem 1rem #e600ff;
   }
   footer{
     width: 100%;
@@ -109,6 +155,28 @@ header::after {
     border-top-left-radius: 2vmax;
     border-top-right-radius: 2vmax;
     box-shadow: 0vmax 0vmax 0.4vmax black;
+    font-family: cursive;
+
+    position: relative;
+  overflow: hidden;
+  }
+  footer::after {
+    content: "";
+    position: absolute;
+    Top: 0;
+    left: -100%;
+    width: 50%;
+    height: 0.12vmax;
+    background: linear-gradient(90deg, transparent, #f5540f, #f5540f, #f5540f, #f5540f, transparent);
+    animation: moveGradient 4s infinite;
+  }
+  @keyframes moveGradient {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
   }
   footer .OLC{
     display: flex;
@@ -153,6 +221,10 @@ header::after {
   .social-links img{
     width: 50px;
     height: 50px;
+    transition: transform 0.3s ease;
+  }
+  .social-links img:hover {
+    transform: translateY(-5px); /* Move the image 5px up on hover */
   }
   .copyright{
     font-size: 1.5vmax;

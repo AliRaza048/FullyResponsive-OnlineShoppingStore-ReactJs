@@ -27,6 +27,7 @@ import Homeimprovement from './Component/Viewallproducts/Homeimprovement';
 import Productdetail from '../src/Component/Productdetail/Productdetail';
 import { AboutUs } from './Component/TermsAndConditions/AboutUs';
 
+
 function Main() {
 
   //Page Showing start from top
@@ -49,7 +50,8 @@ function Main() {
         <div className='maindiv'>
 
           <div className='div1chlid1'>
-            <Link to="/" className='link1'>inPKonlineshop</Link>
+            <Link to="/" className='link1'>ínPKønlineśhop🛍</Link>
+            {/* <Link to="/" className='link1'>inPKonlineshop</Link> */}
           </div>
 
           <div className='div1child2'>
@@ -100,7 +102,7 @@ function Main() {
           </div>
 
           <div className='logo'>
-          <Link to="/" className='link1'><img src={logo} alt='error' /></Link>
+          <Link to="/" className='link1' style={{marginRight:'5vmax'}}><img src={logo} alt='error' /></Link>
           </div>
 
           <div className='contactus'>
@@ -128,7 +130,7 @@ function Main() {
             <Link to="/contactinformation" className='terms-and-condition-link'>Contact information</Link>
             <br/><br/>
           </div>
-          <p style={{backgroundColor:'black', fontSize: '1.5vmax', textAlign:'center'}}>❤️Dev-Ali😊</p>
+          <p style={{backgroundColor:'black', fontSize: '1.5vmax', textAlign:'center'}}>❤️dac😊</p>
           <br/>
       </footer>
       <WhatsAppButton />

@@ -13,8 +13,8 @@ const WhatsAppButton = () => {
   return (
     <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="whatsapp-button" style={{ textDecoration: 'none'}}>
       {/* <i class="ri-whatsapp-fill" style={{ fontSize: '50px', width: '50px', height: '50px', color:'#19b753',marginLeft:'15px'}}></i> */}
-      <img src={whatsappicon2} alt="WhatsApp" />
-      <p style={{color:'green', marginTop:'-10px', fontSize:'smaller', marginRight:'2px'}}>WhatsApp</p>
+      <img src={whatsappicon2} alt="WhatsApp" className='box'/>
+      <p style={{color:'green', marginTop:'-10px', marginRight:'2px', fontFamily:'cursive'}}>WhatsApp</p>
     </a>
   );
 };

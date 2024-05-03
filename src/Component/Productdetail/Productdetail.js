@@ -15,7 +15,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 
-export default function Productdetail() {
+export default function Productdetail(item) {
 
 //Page Showing start from top
 const location = useLocation();
@@ -25,9 +25,10 @@ useEffect(() => {
 //Page Showing start from top
 
 
+// const { cartItems, removeFromCart, incrementQuantity, decrementQuantity, } = useCart();
 
   const { cartItemCount } = useCart(); 
-  const { addToCart } = useCart();
+  const { addToCart} = useCart();
 
 
   // Use the useParams hook to get the id parameter from the route
@@ -215,6 +216,7 @@ const responsive = {
           <Link to='/login' className='loginlink'><img src={usericon} style={{width:'4vmax', height:'2.9vmax' }} className='userimage'/></Link>
         </div>
       </div>
+      
 
       <div className='productDetail'>
         <div style={{display:'flex'}}>
@@ -224,9 +226,48 @@ const responsive = {
             <p style={{fontSize:'large', fontStyle:'oblique'}}>Rs.{product.price}</p>
 
 
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none'}}><button className='whatsappbutton'><img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>Order on WhatsApp</button></a>
-            <button onClick={() => addToCart(product)} className='addtocartbutton' style={{borderRadius:'7px'}}>Add to Cart</button>
-            <Link to='/ordernow'><button onClick={() => addToCart(product)} className='checkoutbutton'>Checkout</button></Link>
+            {/* {cartItems.map((item, index) => (
+              <div key={index} className="cart-item">
+                <div className="item-quantity">
+                  <button onClick={() => decrementQuantity(item)} className='decrementbutton'>-</button>
+                  <span>{item.quantity}</span>
+                  <button onClick={() => incrementQuantity(item)} className='incrementbutton'>+</button>
+                </div>
+              </div>
+            ))} */}
+
+            
+            {/* <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none'}}><button className='whatsappbutton'><img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>Order on WhatsApp</button></a> */}
+            {/* <button onClick={() => addToCart(product)} className='addtocartbutton' style={{borderRadius:'7px'}}>Add to Cart</button> */}
+            {/* <Link to='/ordernow'><button onClick={() => addToCart(product)} className='checkoutbutton'>Checkout</button></Link> */}
+            
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='fancy'>
+              <span className="top-key"></span>
+              <span className='text'>
+                <img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>
+                Order on WhatsApp
+              </span>
+              <span className="bottom-key-1"></span>
+              <span className="bottom-key-2"></span>
+            </a>
+            <button onClick={() => addToCart(product)} className="fancy">
+              <span className="top-key"></span>
+              <span className='text' >
+              <img src={addtocarticon} alt="AddtoCartIconError" style={{width:'2.5vmax', height:'2.2vmax'}}/>
+                Add to Cart
+              </span>
+              <span className="bottom-key-1"></span>
+              <span className="bottom-key-2"></span>
+            </button>
+            <Link to='/ordernow' style={{textDecoration:'none'}}>
+              <button onClick={() => addToCart(product)} className="fancy">
+                <span className="top-key"></span>
+                <span className='text'>Checkout</span>
+                <span className="bottom-key-1"></span>
+                <span className="bottom-key-2"></span>
+              </button>
+            </Link>
+          
           </div>
         </div>
         <h2 className='description'>Description:</h2>
