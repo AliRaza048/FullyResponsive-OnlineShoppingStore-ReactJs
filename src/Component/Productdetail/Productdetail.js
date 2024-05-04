@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useLocation  } from 'react-router-dom';
+import { useParams, useLocation, useNavigate  } from 'react-router-dom';
 import { productlistData1, productlistData2, productlistData3 } from '../ProductCarousal1/data';
 import { doubleproductlistData1, doubleproductlistData2 } from '../Only2ProductCarousal/data';
 import { Link } from 'react-router-dom';
@@ -15,7 +15,9 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 
-export default function Productdetail(item) {
+export default function Productdetail() {
+  const navigate = useNavigate();
+  const [quantity, setQuantity] = useState(1);
 
 //Page Showing start from top
 const location = useLocation();
@@ -28,7 +30,7 @@ useEffect(() => {
 // const { cartItems, removeFromCart, incrementQuantity, decrementQuantity, } = useCart();
 
   const { cartItemCount } = useCart(); 
-  const { addToCart} = useCart();
+  const { addToCart, addToCartProductdetail} = useCart();
 
 
   // Use the useParams hook to get the id parameter from the route
@@ -37,7 +39,7 @@ useEffect(() => {
   const [product, setProduct] = useState(null);
   const [suggestedProducts, setSuggestedProducts] = useState([]);
 
-
+  
   //apny apny data me sy 5 product ky baad 1 product uhtaye ga. asy hi loop chale ga aur 4 product uhta ky may also me show hon gi
   useEffect(() => {
     const allProducts = [
@@ -88,7 +90,34 @@ useEffect(() => {
     }
   }, [id, productlistData1, productlistData2, productlistData3, doubleproductlistData1, doubleproductlistData2]);
    //apny apny data me sy 5 product ky baad 1 product uhtaye ga. asy hi loop chale ga aur 4 product uhta ky may also me show hon gi
+  
+  
 
+
+
+
+  //   useEffect(() => {
+  //   const allProducts = [...productlistData1, ...productlistData2, ...productlistData3, ...doubleproductlistData1, ...doubleproductlistData2];
+  //   const newProduct = allProducts.find(product => product.id === parseInt(id));
+  //   setProduct(newProduct);
+  //   window.scrollTo(0, 0);
+  // }, [id]);
+  const incrementQuantity = () => {
+    setQuantity(prev => prev + 1);
+  };
+  const decrementQuantity = () => {
+    setQuantity(prev => prev > 1 ? prev - 1 : 1);
+  };
+  const handleAddToCart = () => {
+    addToCartProductdetail({...product, quantity});
+    // Optionally, navigate to the cart page
+    // navigate('/cart');
+  };
+  const handleCheckout = () => {
+    addToCartProductdetail({...product, quantity});
+    navigate('/cart');
+  };
+  if (!product) return <div>Loading...</div>;
 
 
 
@@ -161,6 +190,8 @@ useEffect(() => {
     return <div>Product not found</div>;
   }
 
+  const isInStock = product.quantity > 0;
+
   const whatsappNumber = "+923265292748";
   const message = encodeURIComponent("Hello, how can i help you?");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
@@ -226,31 +257,56 @@ const responsive = {
             <p style={{fontSize:'large', fontStyle:'oblique'}}>Rs.{product.price}</p>
 
 
-            {/* {cartItems.map((item, index) => (
-              <div key={index} className="cart-item">
-                <div className="item-quantity">
-                  <button onClick={() => decrementQuantity(item)} className='decrementbutton'>-</button>
-                  <span>{item.quantity}</span>
-                  <button onClick={() => incrementQuantity(item)} className='incrementbutton'>+</button>
-                </div>
-              </div>
-            ))} */}
 
-            
+
+            {/* <p style={{ color: isInStock ? 'green' : 'red' }}>
+              <div className="green-light"></div>
+              <div className="red-light"></div>
+              {stockStatus}
+            </p> */}
+            <p >
+              {isInStock ? (
+                <>
+                  <div  className='green-light-container'>
+                    <div className="green-light" ></div>
+                    <span className='green-light-content'>In Stock</span>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className='red-light-container'>
+                    <div className="red-light"></div>
+                    <span className='red-light-content'>Out of Stock</span>
+                  </div>
+                </>
+              )}
+            </p>
+
             {/* <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none'}}><button className='whatsappbutton'><img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>Order on WhatsApp</button></a> */}
             {/* <button onClick={() => addToCart(product)} className='addtocartbutton' style={{borderRadius:'7px'}}>Add to Cart</button> */}
             {/* <Link to='/ordernow'><button onClick={() => addToCart(product)} className='checkoutbutton'>Checkout</button></Link> */}
             
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='fancy'>
-              <span className="top-key"></span>
-              <span className='text'>
-                <img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>
-                Order on WhatsApp
-              </span>
-              <span className="bottom-key-1"></span>
-              <span className="bottom-key-2"></span>
-            </a>
-            <button onClick={() => addToCart(product)} className="fancy">
+            
+            {/* <button onClick={incrementQuantity} disabled={!isInStock}>+</button>
+            {quantity}
+            <button onClick={decrementQuantity} disabled={!isInStock}>-</button> */}
+            
+            <button onClick={incrementQuantity} disabled={!isInStock}>+</button>
+            {isInStock ? (
+              <>
+                {quantity}
+              </>
+            ) : (
+                <span style={{ opacity: 0.5 }}>0</span>
+            )}
+            <button onClick={decrementQuantity} disabled={!isInStock}>-</button>
+  
+            {/* <button onClick={handleAddToCart}>Add to Cart</button>
+            <button onClick={handleCheckout}>Checkout</button> */}
+            
+
+            {/* <button onClick={() => addToCart(product)} className="fancy"> */}
+            <button onClick={handleAddToCart} className={`fancy ${!isInStock ? 'disabled' : ''}`} disabled={!isInStock}>
               <span className="top-key"></span>
               <span className='text' >
               <img src={addtocarticon} alt="AddtoCartIconError" style={{width:'2.5vmax', height:'2.2vmax'}}/>
@@ -259,15 +315,34 @@ const responsive = {
               <span className="bottom-key-1"></span>
               <span className="bottom-key-2"></span>
             </button>
-            <Link to='/ordernow' style={{textDecoration:'none'}}>
-              <button onClick={() => addToCart(product)} className="fancy">
+
+            
+            <Link to='/ordernow' style={{textDecoration: 'none'}} className={!isInStock ? 'disabled' : ''}>
+              {/* <button onClick={() => addToCart(product)} className="fancy"> */}
+              <button onClick={handleCheckout} className="fancy">
                 <span className="top-key"></span>
                 <span className='text'>Checkout</span>
                 <span className="bottom-key-1"></span>
                 <span className="bottom-key-2"></span>
               </button>
             </Link>
-          
+
+            {/* <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='fancy'> */}
+            <a
+                href={isInStock ? `whatsapp://send?text=${encodeURIComponent(`Ordering ${product.name} - Rs.${product.price}`)}` : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`fancy ${!isInStock ? 'disabled' : ''}`}
+            >
+              <span className="top-key"></span>
+              <span className='text'>
+                <img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>
+                Order on WhatsApp
+              </span>
+              <span className="bottom-key-1"></span>
+              <span className="bottom-key-2"></span>
+            </a>
+            
           </div>
         </div>
         <h2 className='description'>Description:</h2>

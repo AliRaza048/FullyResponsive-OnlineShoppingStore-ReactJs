@@ -4,7 +4,7 @@ import Home from './Component/HomePage/Home';
 import Contact from './Component/Contact/Contact';
 import Cart from './Component/AddToCart/Cart';
 import {BrowserRouter, Routes, Route, Link, NavLink, useLocation} from "react-router-dom";
-import { CartProvider } from './Component/AddToCart/CartContext';
+import { CartProvider } from '../src/Component/AddToCart/CartContext';
 import logo from '../src/Component/Images/blacklogo.png';
 import WhatsAppButton from '../src/Component/WhatsAppButton/WhatsAppButton';
 import RefundPolicy from './Component/TermsAndConditions/RefundPolicy';

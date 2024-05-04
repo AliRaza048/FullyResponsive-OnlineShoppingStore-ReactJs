@@ -29,6 +29,7 @@ export const doubleproductlistData1 = [
       "https://images.unsplash.com/photo-1589782182703-2aaa69037b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTJ8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     name: "Sunglasses Sunses Sunglass Sunglasse Sunglasse",
     price: "1000",
+    quantity: 10,
     description: "Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.Some text about the product.",
     video: <iframe width="100%" height="100%"src="https://www.youtube.com/embed/JIWxbB7l_vE" title="Murdered Out Lamborghini Aventador SVJ (4K)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   },
@@ -38,6 +39,7 @@ export const doubleproductlistData1 = [
       "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     name: "Colorful sneakers",
     price: "2000",
+    quantity: 0,
     description: "Some text about the product..",
     video: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JIWxbB7l_vE" title="Murdered Out Lamborghini Aventador SVJ (4K)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   },

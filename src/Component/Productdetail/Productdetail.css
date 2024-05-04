@@ -130,6 +130,13 @@
 }
 
 
+.disabled {
+  pointer-events: none; /* Disable pointer events */
+  opacity: 0.5; /* Reduce opacity */
+}
+
+
+
 @media (max-width: 768px) {
   .productDetail{
     padding-top: 6vmax;  
@@ -313,3 +320,72 @@
   right: 0;
   width: 0;
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.green-light-container, .red-light-container{
+  display: flex;
+  align-items: center;
+}
+.green-light, .red-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.green-light {
+  background: radial-gradient(circle at center, #0f0, #003300);
+  box-shadow: 0 0 10px 5px #0f0, 0 0 40px 10px #0f0;
+}
+.red-light {
+  background: radial-gradient(circle at center, #f00, #330000);
+  box-shadow: 0 0 10px 5px #f00, 0 0 40px 10px #f00;
+}
+.green-light-content, .red-light-content{
+  margin-left: 10px;
+  font-family: cursive;
+  font-size: 1.2vmax;
+  font-weight: 800;
+}
+.green-light-content{
+  color: green;
+}
+.red-light-content{
+  color: red;
+}
+.green-light:before, .red-light::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  animation: rotate 6s linear infinite;
+}
+.green-light:before{
+  background: radial-gradient(circle at center, rgba(15, 255, 0, 0.5), transparent);
+}
+.red-light:before{
+  background: radial-gradient(circle at center, rgba(255, 0, 0, 0.5), transparent);
+}
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}

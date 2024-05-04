@@ -24,11 +24,15 @@ function Cart() {
     return (item.price * item.quantity).toFixed(2);
   };
 
+
   const calculateFullTotalPrice = () => {
-    return cartItems.reduce((total, item) => {
-      return total + item.price * item.quantity;
-    }, 0).toFixed(2); // Sum up the total and format it
+    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
   };
+  // const calculateFullTotalPrice = () => {
+  //   return cartItems.reduce((total, item) => {
+  //     return total + item.price * item.quantity;
+  //   }, 0).toFixed(2); // Sum up the total and format it
+  // };
 
 
 

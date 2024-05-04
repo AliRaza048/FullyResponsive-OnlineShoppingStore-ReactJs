@@ -15,7 +15,8 @@ export default function Only2Product(props) {
         <p className="doubleprice">Rs.{price}</p>
         {/* <p>{props.description}</p> */}
         <p>
-        <Link to="/shopnow"><button onClick={()=>addToCart({imageurl, name, price})}>Shop Now</button></Link>
+        {/* <Link to="/shopnow"><button onClick={()=>addToCart({id, imageurl, name, price})}>Shop Now</button></Link> */}
+        <Link to="/shopnow"><button className='button type1' onClick={()=>addToCart({id, imageurl, name, price})}>Shop Now</button></Link>
         </p>
       </div>
     </>

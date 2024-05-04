@@ -14,7 +14,7 @@ export default function Products(props) {
         </Link>
         <p className="price">Rs.{price}</p>
         {/* <p>{props.description}</p> */}
-        <p><button className='button type1' onClick={()=>addToCart({imageurl, name, price})}>Add to Cart</button></p>
+        <p><button className='button type1' onClick={()=>addToCart({id, imageurl, name, price})}>Add to Cart</button></p>
       </div>
     </>
   );

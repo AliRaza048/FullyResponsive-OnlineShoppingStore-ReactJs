@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Home.css';
 import ImageSlider from '../ImageSlider/ImageSlider';
 import { Link} from 'react-router-dom';
@@ -13,6 +13,10 @@ import usericon from '../Images/usericon.png'
 
 export default function Home() {
   const { cartItemCount } = useCart();
+  useEffect(() => {
+    console.log("Cart count updated:", cartItemCount);
+}, [cartItemCount]); 
+  // const { cartItemCount } = useContext(CartContext);
   return (
     <>
       <div className='Part2'>
@@ -28,7 +32,10 @@ export default function Home() {
             {/* <Link to="/cart" className='link2'><i class="ri-shopping-cart-2-line"></i>Cart{cartItemCount > 0 && <span className="cart-count">{cartItemCount}</span>}</Link> */}
 
             {/* cart link */}
-            <Link to="/cart" className='link2'>{cartItemCount > 0 && <span className="cart-count" >{cartItemCount}</span>}<img src={addtocarticon} alt="AddtoCartIconError" style={{width:'2.5vmax', height:'2vmax'}}/></Link>
+            <Link to="/cart" className='link2'>
+              {cartItemCount > 0 && <span className="cart-count" >{cartItemCount}</span>}
+                <img src={addtocarticon} alt="AddtoCartIconError" style={{width:'2.5vmax', height:'2vmax'}}/>
+            </Link>
             
             {/* login link */}
             <Link to='/login' className='loginlink'><img src={usericon} style={{width:'4vmax', height:'2.9vmax' }} className='userimage'/></Link>
