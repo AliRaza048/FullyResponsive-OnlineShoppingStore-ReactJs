@@ -51,6 +51,7 @@ export default function Topcollections() {
                     price={item.price}
                     description={item.description}
                     addToCart={addToCart}
+                    quantity={item.quantity}
                 />
             ))}
         </div>

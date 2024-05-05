@@ -19,6 +19,7 @@ export default function CarousalOnly2Product() {
           price={item.price}
           description={item.description}
           addToCart={addToCart}
+          quantity={item.quantity}
         />
         
       ));
@@ -32,6 +33,7 @@ export default function CarousalOnly2Product() {
           price={item.price}
           description={item.description}
           addToCart={addToCart}
+          quantity={item.quantity}
           
         />
       ));

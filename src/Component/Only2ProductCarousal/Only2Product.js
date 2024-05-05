@@ -4,7 +4,17 @@ import { name } from 'tar/lib/types';
 import {Link, NavLink} from "react-router-dom";
 
 export default function Only2Product(props) {
-  const { id, name, imageurl, price, addToCart } = props;
+  const { id, name, imageurl, price, addToCart, quantity } = props;
+
+  const isInStock = quantity > 0;
+  const handleAddToCartClick = () => {
+    if (!isInStock) {
+      alert("This Product is OUT OF STOCK. So you cannot BUY this product. Thanks.");
+    } else {
+      addToCart({ id, imageurl, name, price });
+    }
+  };
+
   return (
     <>
       <div className="doublecard">
@@ -16,7 +26,17 @@ export default function Only2Product(props) {
         {/* <p>{props.description}</p> */}
         <p>
         {/* <Link to="/shopnow"><button onClick={()=>addToCart({id, imageurl, name, price})}>Shop Now</button></Link> */}
-        <Link to="/shopnow"><button className='button type1' onClick={()=>addToCart({id, imageurl, name, price})}>Shop Now</button></Link>
+
+        {/* niche commented link button ko use karne ky liye os sy niche wale isInStock condition
+        ko comment kar dena aur upar isInStock aur handleAddToCartClick arrow function ko bi comment kar dena. */}
+        {/* <Link to="/shopnow"><button className='button type1' onClick={()=>addToCart({id, imageurl, name, price})}>Shop Now</button></Link> */}
+        {isInStock ? (
+          <Link to="/shopnow">
+            <button className='button type1' onClick={handleAddToCartClick}>Shop Now</button>
+          </Link>
+        ) : (
+          <button className='button type1' onClick={handleAddToCartClick}>Shop Now</button>
+        )}
         </p>
       </div>
     </>

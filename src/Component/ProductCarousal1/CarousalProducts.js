@@ -21,6 +21,7 @@ export default function CarouselProducts() {
           price={item.price}
           description={item.description}
           addToCart={addToCart}
+          quantity={item.quantity}
         />
       ));
       const productlist2 = productlistData2.map((item) => (
@@ -32,6 +33,7 @@ export default function CarouselProducts() {
           price={item.price}
           description={item.description}
           addToCart={addToCart}
+          quantity={item.quantity}
         />
       ));
       const productlist3 = productlistData3.map((item) => (
@@ -43,6 +45,7 @@ export default function CarouselProducts() {
           price={item.price}
           description={item.description}
           addToCart={addToCart}
+          quantity={item.quantity}
         />
       ));
 

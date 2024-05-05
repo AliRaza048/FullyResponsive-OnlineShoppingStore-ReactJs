@@ -11,26 +11,6 @@ export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [cartItemCount, setCartItemCount] = useState(0);
 
-//   function addToCartProductdetail(item) {
-//     setCartItems(prevItems => {
-//         const itemIndex = prevItems.findIndex(i => i.id === item.id);
-//         if (itemIndex > -1) {
-//             return prevItems.map((i, index) => {
-//                 if (index === itemIndex) {
-//                     return { ...i, quantity: i.quantity + item.quantity };
-//                 }
-//                 return i;
-//             });
-//         } else {
-//             setCartItemCount(prevCount => {
-//                 // console.log("Incrementing cart item count:", prevCount + 1);  // Log for debugging
-//                 return prevCount + 1;
-//             });
-//             return [...prevItems, {...item, quantity: 1}];
-//         }
-//     });
-// }
-
   function addToCartProductdetail(item) {
     setCartItems(prevItems => {
       const itemIndex = prevItems.findIndex(i => i.id === item.id);
@@ -50,37 +30,69 @@ export function CartProvider({ children }) {
       }
     });
   }
+  
 
-  function addToCart(newItem) {
-    setCartItems(prevItems => {
+function addToCart(newItem) {
+  setCartItems(prevItems => {
       const itemIndex = prevItems.findIndex(item => item.id === newItem.id);
       if (itemIndex > -1) {
-        // Product already exists in the cart, update the quantity
-        return prevItems.map((item, index) => {
-          if (index === itemIndex) {
-            return {...item, quantity: item.quantity + 1};
-          }
-          return item;
-        });
+          // Item exists, just update the quantity
+          return prevItems.map((item, index) => {
+              if (index === itemIndex) {
+                  return {...item, quantity: item.quantity + 1}; // Increment the quantity
+              }
+              return item;
+          });
       } else {
-        // Product does not exist, add new item to the cart
-        setCartItemCount(prevCount => prevCount + 1);
-        return [...prevItems, {...newItem, quantity: 1}];
+          // New item, increment the cartItemCount
+          setCartItemCount(prevCount => prevCount + 1);
+          return [...prevItems, {...newItem, quantity: 1}]; // Add new item with quantity 1
       }
-    });
-    // setCartItemCount(prevCount => prevCount + 1);
-  }
-  
-  function removeFromCart(item) {
+  });
+}
+
+
+function removeFromCart(item) {
     setCartItems(prevItems => {
-      const remainingItems = prevItems.filter(i => i.id !== item.id);
-      if (prevItems.length > remainingItems.length) {
-        // Only decrement the cart item count if an item was actually removed
-        setCartItemCount(prevCount => prevCount - 1);
-      }
-      return remainingItems;
+        const itemToRemove = prevItems.find(i => i.id === item.id);
+        if (itemToRemove) {
+            // Decrement by the quantity of the removed item.
+            setCartItemCount(prevCount => Math.max(0, prevCount - itemToRemove.quantity));
+        }
+        return prevItems.filter(i => i.id !== item.id);
     });
-  }
+}
+
+  // function addToCart(newItem) {
+  //   setCartItems(prevItems => {
+  //     const itemIndex = prevItems.findIndex(item => item.id === newItem.id);
+  //     if (itemIndex > -1) {
+  //       // Product already exists in the cart, update the quantity
+  //       return prevItems.map((item, index) => {
+  //         if (index === itemIndex) {
+  //           return {...item, quantity: item.quantity + 1};
+  //         }
+  //         return item;
+  //       });
+  //     } else {
+  //       // Product does not exist, add new item to the cart
+  //       setCartItemCount(prevCount => prevCount + 1);
+  //       return [...prevItems, {...newItem, quantity: 1}];
+  //     }
+  //   });
+  //   // setCartItemCount(prevCount => prevCount + 1);
+  // }
+  
+  // function removeFromCart(item) {
+  //   setCartItems(prevItems => {
+  //     const remainingItems = prevItems.filter(i => i.id !== item.id);
+  //     if (prevItems.length > remainingItems.length) {
+  //       // Only decrement the cart item count if an item was actually removed
+  //       setCartItemCount(prevCount => prevCount - 1);
+  //     }
+  //     return remainingItems;
+  //   });
+  // }
 
   function incrementQuantity(item) {
     setCartItems(prevItems => prevItems.map(i => {
@@ -100,6 +112,16 @@ export function CartProvider({ children }) {
       }
     }));
   }
+  
+
+  // Agr same product ko 1 sy zyada time cart me bejna aur har time py cart count icon me 
+  // number likha ay toh niche useeffect ko uncomment kar do.
+  //  maslan 1 product ko 2 daffa 'add to cart' kiya hai toh cart icon me 2 likha ay ga.
+  // useEffect(() => {
+  //   const totalCount = cartItems.reduce((count, item) => count + item.quantity, 0);
+  //   setCartItemCount(totalCount);
+  // }, [cartItems]);
+
   
   return (
     <CartContext.Provider value={{ cartItems, addToCart, addToCartProductdetail, removeFromCart, cartItemCount, incrementQuantity, decrementQuantity, }}>

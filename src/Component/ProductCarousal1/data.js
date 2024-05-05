@@ -40,7 +40,7 @@ export const productlistData1 = [
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
     name: "Sport sneakers",
     price: "2000",
-    quantity: 10,
+    quantity: 0,
     description: "Some text about the product..",
     video: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JIWxbB7l_vE" title="Murdered Out Lamborghini Aventador SVJ (4K)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   },

@@ -50,6 +50,7 @@ export default function Electronicscollection() {
                     price={item.price}
                     description={item.description}
                     addToCart={addToCart}
+                    quantity={item.quantity}
                 />
             ))}
         </div>

@@ -13,16 +13,12 @@ import usericon from '../Images/usericon.png'
 
 export default function Home() {
   const { cartItemCount } = useCart();
-  useEffect(() => {
-    console.log("Cart count updated:", cartItemCount);
-}, [cartItemCount]); 
-  // const { cartItemCount } = useContext(CartContext);
   return (
     <>
       <div className='Part2'>
           <div style={{display:'flex'}}>
-          <Searchproduct productData={[...productlistData1, ...productlistData2, ...productlistData3, ...doubleproductlistData1, ...doubleproductlistData2]} />
-          {/* <input type='text' className='searchbar' placeholder='Search item'/> */}
+            <Searchproduct productData={[...productlistData1, ...productlistData2, ...productlistData3, ...doubleproductlistData1, ...doubleproductlistData2]} />
+            {/* <input type='text' className='searchbar' placeholder='Search item'/> */}
             {/* <input type='text' className='searchbar' placeholder='Search item' value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}/> */}
             {/* <i class="ri-search-line"></i> */}
