@@ -130,7 +130,7 @@ function Main() {
             <Link to="/contactinformation" className='terms-and-condition-link'>Contact information</Link>
             <br/><br/>
           </div>
-          <p style={{backgroundColor:'black', fontSize: '1.5vmax', textAlign:'center'}}>❤️dac😊</p>
+          <p style={{backgroundColor:'black', fontSize: '1.5vmax', textAlign:'center',marginBottom:"10px"}}>❤️dac😊</p>
           <br/>
       </footer>
       <WhatsAppButton />

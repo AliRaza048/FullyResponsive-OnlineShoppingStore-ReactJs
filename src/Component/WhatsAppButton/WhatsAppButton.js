@@ -5,9 +5,7 @@ import whatsappicon2 from '../Images/whatsappicon2.png'
 
 const WhatsAppButton = () => {
   const whatsappNumber = "+923265292748";
-  // const whatsappNumber = "923091416573";
   const message = encodeURIComponent("Hello, how can i help you?");
-
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
   return (

@@ -148,7 +148,6 @@ header::after {
   }
   footer{
     width: 100%;
-    /* min-height: 0vh; */
     background-color: black;
     color: white;
     height: 100%;
@@ -158,7 +157,7 @@ header::after {
     font-family: cursive;
 
     position: relative;
-  overflow: hidden;
+    overflow: hidden;
   }
   footer::after {
     content: "";
@@ -184,7 +183,6 @@ header::after {
     font-size: 1.5vmax;
   }
   footer .OLC div{
-    /* background-color: red; */
     width: 27%;
     height: 18vmax;
     margin-top: 3vmax;
@@ -224,7 +222,7 @@ header::after {
     transition: transform 0.3s ease;
   }
   .social-links img:hover {
-    transform: translateY(-5px); /* Move the image 5px up on hover */
+    transform: translateY(-5px);
   }
   .copyright{
     font-size: 1.5vmax;
@@ -237,62 +235,59 @@ header::after {
     gap: 2vmax;
     margin-left: 7vmax;
     flex-wrap: wrap;
-    /* margin-bottom: 50px; */
+  
   }
   .terms-and-condition-link{
     text-decoration: none;
     color: white;
     font-size: 1.5vmax;
-    /* margin-bottom: 50px; */
+  
   }
   .terms-and-condition-link:hover{
     color: cadetblue;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px ) and (min-width: 481px ) {
     .link1{
       font-size: 2vmax;
     }
     footer{
       height: 60vh;      
     }
-    /* footer .OLC div{
- 
-      width: 35%;
-      height: 18vmax;
-    } */
+
     footer .OLC{
       height: 23vmax;
     }
-    footer .OLC .contactus{
+    /* footer .OLC .contactus{
       margin-right: 13%;
-    }
+    } */
     footer .OLC p{
       margin-top: -2px;
     }
     footer .OLC .logo img{
-      width: 80%;
-      height: 65%;
-      margin-top: 0.5rem;
+      width: 100;
+      height: 85%;
+      /* margin-top: 0.5rem; */
+      margin-left: -12px;
     }
     footer .OLC .ourmission{
-      margin-left: 15px;
+      margin-left: 4vmax;
     }
     footer .OLC .ourmission, footer .OLC .contactus{
       margin-top: 4vmax;
     }
     .copyright{
-      margin-left: 15px;
+      margin-left: 7vmax;
     }
     .terms-and-conditions{
-      margin-left: 15px;
+      margin-left: 7vmax;
       gap: 10px;
     }
     .terms-and-condition-link:hover{
       color: white;
     }
     .link3{
-      /* font-size: calc(0.8vmax + 0.6rem); */
+
       font-size: 1.5vmax;
       font-weight: bold;
     }
@@ -300,7 +295,7 @@ header::after {
   @media (max-width: 480px) {
     footer{
       width: 100%;
-      /* min-height: 0vh; */
+
       background-color: black;
       color: white;
       height: 100%;
@@ -311,7 +306,7 @@ header::after {
       font-size: 2vmax;
     }
     footer .OLC div{
-      /* background-color: red; */
+    
       width: 75%;
       margin-top: 3vmax;
       margin-left: 13%;
@@ -319,7 +314,7 @@ header::after {
     }
     footer .OLC .ourmission{
       margin-left: 13%;
-      /* margin-top: 45vmax; */
+     
     }
 
     footer .OLC .ourmission h3, footer .OLC .contactus h3{
@@ -343,25 +338,25 @@ header::after {
     footer .OLC .logo img{
       width: 25vmax;
       height: 25vmax;
-      /* border: 0.1vmax solid white; */
+  
       border-radius: 20px;
       box-shadow:  1px 1px 10px rgb(62, 61, 61);
      
     }
-    .social-links{
+    /* .social-links{
       margin-top: 48vmax;
-    }
+    } */
     .social-links img{
       width: 50px;
       height: 50px;
     }
     .copyright{
       font-size: 1.7vmax;
-      text-align: center;
     }
     .terms-and-conditions{
       display: flex;
       justify-content: center;
+      margin-left: 0;
     }
     .terms-and-condition-link{
       text-decoration: none;
