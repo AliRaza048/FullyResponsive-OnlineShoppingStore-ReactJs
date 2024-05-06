@@ -130,10 +130,7 @@
 }
 
 
-.disabled {
-  pointer-events: none; /* Disable pointer events */
-  opacity: 0.5; /* Reduce opacity */
-}
+
 
 
 
@@ -210,11 +207,59 @@
 
 
 
+/* -------------Increament Quantity and Decreament Quantity CSS------------ */
+.fancy-btn-container{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  gap: 20px;
+  color: black;
+  width: 25vw;
+}
+.fancy-increment-btn, .fancy-decrement-btn, .quantity{
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 1vmax;
+  width: 5vw;
+  min-width: 70px;
+  text-decoration: none;
+}
+.quantity{
+  width: 8vw;
+  text-decoration:underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 0.1rem;
+  text-decoration-color: rgb(109, 116, 109);
+}
+.fancy-increment-btn:hover, .fancy-decrement-btn:hover {
+  color: white;
+  background: black;
+ }
+ .fancy-increment-btn:hover::before, .fancy-decrement-btn:hover::before {
+  width: 0.9375rem;
+  background: white;
+ }
 
 
 
-
-
+/* ----------Add to Cart, Checkout and Order on Whatsapp CSS ------------*/
 .fancy {
   background-color: transparent;
   border: 2px solid #000;
@@ -323,18 +368,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* ----------In Stock Green Light and Out of Stock Red Light CSS ------------*/
 .green-light-container, .red-light-container{
   display: flex;
   align-items: center;
@@ -388,4 +422,34 @@
   to {
       transform: rotate(360deg);
   }
+}
+
+
+
+/* ----------Disable CSS------------*/
+.disabled {
+  pointer-events: none; /* Disable pointer events */
+  opacity: 0.5; /* Reduce opacity */
+}
+
+
+
+/* --------multiple product CSS--------- */
+.image-selector{
+  margin-top: 10px;
+}
+.image-selector img{
+  width: 4.5vmax;
+  height: 4vmax;
+  cursor: pointer;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: 1.5px solid black;
+  aspect-ratio: 3/2;
+  transition: transform 1s ease;
+}
+.image-selector img:hover{
+  filter: brightness(120%);
+  /* rotate: 15deg; */
+  transform: rotate(15deg); 
 }

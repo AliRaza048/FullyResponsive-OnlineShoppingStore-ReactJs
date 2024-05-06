@@ -26,6 +26,7 @@ import Homeimprovement from './Component/Viewallproducts/Homeimprovement';
 // import Checkout from './Component/Checkout/Checkout';
 import Productdetail from '../src/Component/Productdetail/Productdetail';
 import { AboutUs } from './Component/TermsAndConditions/AboutUs';
+import coder from '../src/Component/Images/coder.png'
 
 
 function Main() {
@@ -130,7 +131,18 @@ function Main() {
             <Link to="/contactinformation" className='terms-and-condition-link'>Contact information</Link>
             <br/><br/>
           </div>
-          <p style={{backgroundColor:'black', fontSize: '1.5vmax', textAlign:'center',marginBottom:"10px"}}>❤️dac😊</p>
+          <p style={{
+              backgroundColor:'black',
+              fontSize: '1.5vmax',
+              marginBottom:"10px",
+              display:'flex',
+              justifyContent:'center',
+              alignItems:'center'
+              }}>
+            ❤️dac
+            <img src={coder} alt="developer" 
+              style={{width:'1.5vmax', height:'1.5vmax', marginLeft:'4px'}}/>
+          </p>
           <br/>
       </footer>
       <WhatsAppButton />

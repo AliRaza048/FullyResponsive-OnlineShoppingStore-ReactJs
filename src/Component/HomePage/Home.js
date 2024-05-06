@@ -30,11 +30,11 @@ export default function Home() {
             {/* cart link */}
             <Link to="/cart" className='link2'>
               {cartItemCount > 0 && <span className="cart-count" >{cartItemCount}</span>}
-                <img src={addtocarticon} alt="AddtoCartIconError" style={{width:'2.5vmax', height:'2vmax'}}/>
+                <img src={addtocarticon} alt="AddtoCartIconError" style={{width:'3vmax', height:'2.5vmax'}}/>
             </Link>
             
             {/* login link */}
-            <Link to='/login' className='loginlink'><img src={usericon} style={{width:'4vmax', height:'2.9vmax' }} className='userimage'/></Link>
+            <Link to='/login' className='loginlink'><img src={usericon} style={{width:'5vmax', height:'3.5vmax' }} className='userimage'/></Link>
           </div>
       </div>
 

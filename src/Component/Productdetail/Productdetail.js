@@ -18,28 +18,24 @@ import 'react-multi-carousel/lib/styles.css';
 export default function Productdetail() {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
-
-//Page Showing start from top
-const location = useLocation();
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, [location]); 
-//Page Showing start from top
-
-
-// const { cartItems, removeFromCart, incrementQuantity, decrementQuantity, } = useCart();
-
   const { cartItemCount } = useCart(); 
   const { addToCart, addToCartProductdetail} = useCart();
-
+  const [product, setProduct] = useState(null);
+  const [suggestedProducts, setSuggestedProducts] = useState([]);
+  const [selectedImageUrl, setSelectedImageUrl] = useState('');
 
   // Use the useParams hook to get the id parameter from the route
   const { id } = useParams();
 
-  const [product, setProduct] = useState(null);
-  const [suggestedProducts, setSuggestedProducts] = useState([]);
+  //Page Showing start from top
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]); 
+  //Page Showing start from top
 
-  
+
+
   //apny apny data me sy 5 product ky baad 1 product uhtaye ga. asy hi loop chale ga aur 4 product uhta ky may also me show hon gi
   useEffect(() => {
     const allProducts = [
@@ -50,12 +46,24 @@ useEffect(() => {
       ...doubleproductlistData2
     ];
   
+
     // Update product details
     const newProduct = allProducts.find(product => product.id === parseInt(id));
     if (newProduct !== product) {
       setProduct(newProduct);
     }
-  
+    // Update product details
+
+
+    // multiple product image
+    const foundProduct = allProducts.find(p => p.id === parseInt(id));
+    setProduct(foundProduct);
+    if (foundProduct) {
+      setSelectedImageUrl(foundProduct.imageurl[0]); // Set the first image as default
+    }
+    // multiple product image
+
+    
     // Get the dataset of the selected product
     let selectedDataset;
     if (productlistData1.some(product => product.id.toString() === id)) {
@@ -91,17 +99,8 @@ useEffect(() => {
   }, [id, productlistData1, productlistData2, productlistData3, doubleproductlistData1, doubleproductlistData2]);
    //apny apny data me sy 5 product ky baad 1 product uhtaye ga. asy hi loop chale ga aur 4 product uhta ky may also me show hon gi
   
-  
 
-
-
-
-  //   useEffect(() => {
-  //   const allProducts = [...productlistData1, ...productlistData2, ...productlistData3, ...doubleproductlistData1, ...doubleproductlistData2];
-  //   const newProduct = allProducts.find(product => product.id === parseInt(id));
-  //   setProduct(newProduct);
-  //   window.scrollTo(0, 0);
-  // }, [id]);
+  // increment, decrement quantity
   const incrementQuantity = () => {
     setQuantity(prev => prev + 1);
   };
@@ -110,14 +109,14 @@ useEffect(() => {
   };
   const handleAddToCart = () => {
     addToCartProductdetail({...product, quantity});
-    // Optionally, navigate to the cart page
-    // navigate('/cart');
   };
   const handleCheckout = () => {
     addToCartProductdetail({...product, quantity});
     navigate('/cart');
   };
-  if (!product) return <div>Loading...</div>;
+  // increment, decrement quantity
+
+  // if (!product) return <div>Loading...</div>;
 
 
 
@@ -190,11 +189,16 @@ useEffect(() => {
     return <div>Product not found</div>;
   }
 
+  // isInstock If Product Quantity Greater than 0
   const isInStock = product.quantity > 0;
+  //isInstock If Product Quantity Greater than 0
 
+
+  //Order On Whatsapp
   const whatsappNumber = "+923265292748";
-  const message = encodeURIComponent("Hello, how can i help you?");
+  const message = encodeURIComponent("");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+  //Order On Whatsapp
 
   
   //   const allProducts = [...productlistData1, ...productlistData2, ...productlistData3, ...doubleproductlistData1, ...doubleproductlistData2];
@@ -235,35 +239,49 @@ const responsive = {
 
   return (
     <>
+      {/*------------Search Product and cart, cartItemCount, login Section---------------*/}
       <div className='Part2'>
+        
+        {/* -------------Search Product code-------------- */}
         <div style={{display:'flex'}}>
-        <Searchproduct productData={[...productlistData1, ...productlistData2, ...productlistData3, ...doubleproductlistData1, ...doubleproductlistData2]} />
+          <Searchproduct productData={[...productlistData1, ...productlistData2, ...productlistData3, ...doubleproductlistData1, ...doubleproductlistData2]} />
           <img src={searchicon} alt="SearchIconError" style={{width:'2.5vmax', height:'2vmax', marginBottom:'3.5px'}}/>
         </div>
+        {/* -------------Search Product code-------------- */}
+
+        {/* -------cart, cartItemCount, login code-------- */}
         <div  style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
           {/* <Link to="/cart" className='link2'><img src={addtocarticon} alt="AddtoCartIconError" style={{width:'2.5vmax', height:'2vmax'}}/>Cart{cartItemCount > 0 && <span className="cart-count">{cartItemCount}</span>}</Link> */}
           <Link to="/cart" className='link2'>{cartItemCount > 0 && <span className="cart-count" >{cartItemCount}</span>}<img src={addtocarticon} alt="AddtoCartIconError" style={{width:'2.5vmax', height:'2vmax'}}/></Link>
           {/* <Link to='/login' className='loginlink'><img src={usericon} style={{width:'55px', height:'38px' }} className='userimage'/>Login</Link> */}
           <Link to='/login' className='loginlink'><img src={usericon} style={{width:'4vmax', height:'2.9vmax' }} className='userimage'/></Link>
         </div>
+        {/* -------cart, cartItemCount, login code-------- */}
+
       </div>
+      {/*------------Search Product and cart, cartItemCount, login Section---------------*/}
       
 
+
+
+      {/* -----------------Product Detail Section------------------------- */}
       <div className='productDetail'>
         <div style={{display:'flex'}}>
-          <img src={product.imageurl} alt={product.name} className='productimage'/>
+          {/* <img src={product.imageurl} alt={product.name} className='productimage'/> */}
+          <img src={selectedImageUrl} alt={product.name} className='productimage'/>
           <div style={{marginLeft:'5%'}}>
             <h2 style={{wordWrap:'break-word'}}>{product.name}</h2>
             <p style={{fontSize:'large', fontStyle:'oblique'}}>Rs.{product.price}</p>
 
 
-
-
-            {/* <p style={{ color: isInStock ? 'green' : 'red' }}>
+            {/* ----------In Stock Green Light and Out of Stock Red Light Code ---------- */}
+             
+             {/* <p style={{ color: isInStock ? 'green' : 'red' }}>
               <div className="green-light"></div>
               <div className="red-light"></div>
               {stockStatus}
             </p> */}
+
             <p >
               {isInStock ? (
                 <>
@@ -281,29 +299,47 @@ const responsive = {
                 </>
               )}
             </p>
+            {/* ----------In Stock Green Light and Out of Stock Red Light Code ---------- */}
 
-            {/* <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none'}}><button className='whatsappbutton'><img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>Order on WhatsApp</button></a> */}
-            {/* <button onClick={() => addToCart(product)} className='addtocartbutton' style={{borderRadius:'7px'}}>Add to Cart</button> */}
-            {/* <Link to='/ordernow'><button onClick={() => addToCart(product)} className='checkoutbutton'>Checkout</button></Link> */}
-            
+           
+
+
+            {/* -------------Increament Quantity and Decreament Quantity Code------------ */}
             
             {/* <button onClick={incrementQuantity} disabled={!isInStock}>+</button>
             {quantity}
             <button onClick={decrementQuantity} disabled={!isInStock}>-</button> */}
+
             
-            <button onClick={incrementQuantity} disabled={!isInStock}>+</button>
-            {isInStock ? (
-              <>
-                {quantity}
-              </>
-            ) : (
-                <span style={{ opacity: 0.5 }}>0</span>
-            )}
-            <button onClick={decrementQuantity} disabled={!isInStock}>-</button>
+            <div className='fancy-btn-container'>
+              <button onClick={incrementQuantity} className={`fancy-increment-btn ${!isInStock ? 'disabled' : ''}`} disabled={!isInStock}>
+                +
+              </button>
+              {isInStock ? (
+                <span className='quantity'>
+                  {quantity}
+                </span>
+              ) : (
+                <span style={{ opacity: 0.5 }} className='quantity'>0</span>
+              )}
+              <button onClick={decrementQuantity} className={`fancy-decrement-btn ${!isInStock ? 'disabled' : ''}`} disabled={!isInStock}>
+                -
+              </button>
+            </div>
   
             {/* <button onClick={handleAddToCart}>Add to Cart</button>
             <button onClick={handleCheckout}>Checkout</button> */}
-            
+            {/* -------------Increament Quantity and Decreament Quantity Code------------ */}
+
+
+
+
+
+            {/* ----------Add to Cart, Checkout and Order on Whatsapp Buttons ------------*/}
+
+             {/* <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none'}}><button className='whatsappbutton'><img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>Order on WhatsApp</button></a> */}
+            {/* <button onClick={() => addToCart(product)} className='addtocartbutton' style={{borderRadius:'7px'}}>Add to Cart</button> */}
+            {/* <Link to='/ordernow'><button onClick={() => addToCart(product)} className='checkoutbutton'>Checkout</button></Link> */}
 
             {/* <button onClick={() => addToCart(product)} className="fancy"> */}
             <button onClick={handleAddToCart} className={`fancy ${!isInStock ? 'disabled' : ''}`} disabled={!isInStock}>
@@ -345,6 +381,28 @@ const responsive = {
             
           </div>
         </div>
+        {/* ----------Add to Cart, Checkout and Order on Whatsapp Buttons ------------*/}
+
+
+
+
+        {/* ----------------multiple product image--------------- */}
+        <div className="image-selector">
+          {product.imageurl.map((url, index) => (
+            <img
+              key={index}
+              src={url}
+              alt={`Thumbnail ${index}`}
+              className="thumbnail"
+              onClick={() => setSelectedImageUrl(url)}
+           />
+          ))}
+        </div>
+        {/* ----------------multiple product image--------------- */}
+
+
+
+
         <h2 className='description'>Description:</h2>
         <p>{product.description}</p>
         <div className='productvideo'>
@@ -352,16 +410,22 @@ const responsive = {
         </div>
         {/* <p>{product.dex}</p> */}
       </div>
+      {/* -----------------Product Detail Section------------------------- */}
       
-       {/* Draw Text 2 Sided line code*/}
+
+
+      {/* -----------Draw Text 2 Sided line code--------------- */}
         <div className="text-container">
           <div className="horizontal-line"></div>
           <h3>🔥 You May Also Like 🔥</h3>
           <div className="horizontal-line"></div>
         </div>
-       {/* Draw Text 2 Sided line code*/}
+      {/* -----------Draw Text 2 Sided line code-------------- */}
 
-       {/* "You May Also Like" section */}
+
+
+
+      {/* ------------------"You May Also Like" section----------------- */}
         <Carousel responsive={responsive} containerClass="carousel-container">
           {suggestedProducts.map(product => (
             <div key={product.id} className="SuggestionsCard">
@@ -374,51 +438,8 @@ const responsive = {
             </div>
           ))}
         </Carousel>
+      {/* ------------------"You May Also Like" section----------------- */}
      
     </>
   );
 }
-
-
-
-// import React, { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
-// import { productData1, productData2, productData3 } from "../ProductCarousal1/data";
-
-// export default function Productdetail() {
-//   const { id } = useParams();
-//   const [product, setProduct] = useState(null);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     const allProducts = [...productData1, ...productData2, ...productData3];
-//     const foundProduct = allProducts.find((product) => product.id === parseInt(id));
-
-//     if (foundProduct) {
-//       setProduct(foundProduct);
-//     } else {
-//       // If product is not found, redirect or show an error message
-//       console.error("Product not found");
-//     }
-
-//     setLoading(false);
-//   }, [id]);
-
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   if (!product) {
-//     return <div>Product not found</div>;
-//   }
-
-//   return (
-//     <div>
-//       <h2>{product.name}</h2>
-//       <img src={product.imageurl} alt={product.name} />
-//       <p>Price: Rs.{product.price}</p>
-//       <p>Description: {product.description}</p>
-//       <button>Add to Cart</button>
-//     </div>
-//   );
-// }
