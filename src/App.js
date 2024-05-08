@@ -59,6 +59,7 @@ function Main() {
             <NavLink to="/" className='link3'>Home</NavLink>
             <NavLink to="/electronics" className='link3'>Electronics</NavLink>
             <NavLink to="/home_improvement" className='link3'>Home Improvement</NavLink>
+            
             <NavLink to="/about-us" className='link3'>About Us</NavLink>
             <NavLink to="/contact-us" className='link3'>Contact Us</NavLink>
             {/* <NavLink to="/checkout" className='link3'>Checkout</NavLink> */}

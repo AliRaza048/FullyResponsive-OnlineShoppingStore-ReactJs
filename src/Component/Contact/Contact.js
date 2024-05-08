@@ -44,7 +44,7 @@ export default function Contact() {
           <input type='text' name='fullname' placeholder='example' required/>
         </label>
       
-        <label> Enter Mobile No. OR Whatsapp No.
+        <label> Enter Mobile No. <span style={{color:"#f26a49"}}>OR</span> Whatsapp No.
           <input type='text' name='mobileno' placeholder='your mobile no or whatsapp no'  value={mobileNo} onChange={handleInputNumberChange} required/>
         </label>
         

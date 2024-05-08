@@ -3,16 +3,42 @@
   padding-top: 7vmax;
 
 }
-.productimage{
-  /* width: 45vmax; */
+.images-container{
   width: 60%;
+  height: 40vmax;
+  margin-top: 2vmax; 
+}
+.productimage{
+  width: 100%;
   height: 35vmax;
   border-radius: 10px;
-  margin-top: 2vmax;
   aspect-ratio: 3/2;
   object-fit: contain;
   background-color: #000;
 }
+
+/* --------multiple product CSS--------- */
+.image-selector{
+  margin-top: 5px;
+}
+.image-selector img{
+  width: 4.5vmax;
+  height: 4vmax;
+  cursor: pointer;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: 1.5px solid black;
+  aspect-ratio: 3/2;
+  transition: transform 1s ease;
+}
+.image-selector img:hover{
+  filter: brightness(120%);
+  /* rotate: 15deg; */
+  transform: rotate(15deg); 
+}
+/* --------multiple product CSS--------- */
+
+
 /* .productDetail button {
   border: none;
   outline: 0;
@@ -138,13 +164,20 @@
   .productDetail{
     padding-top: 6vmax;  
   }
-  .productimage{
-    /* width: 29vmax;
-    height: 26vmax; */
-    width: 55%;
+  .images-container{
+    width: 86%;
+    height: 40vmax;
+    margin-top: 4.5vmax; 
+  }
+  .image-selector{
+    margin-top: 2px;
+  }
+  /* .productimage{
+
+    width: 100%;
     height: 35vmax;
     margin-top: 4.5vmax;
-  }
+  } */
   /* .productDetail .checkoutbutton{
     border-radius: 5px;
     background-color: limegreen;
@@ -203,6 +236,12 @@
   margin: 0 0.2rem;
 }
 /* Draw Text 2 Sided line code css */
+
+}
+@media (max-width: 480px) {
+.fancy-increment-btn, .fancy-decrement-btn, .quantity{
+  left: 2.5em;
+}
 }
 
 
@@ -212,7 +251,7 @@
   display: flex;
   justify-content:center;
   align-items: center;
-  gap: 20px;
+  gap: 2vmax;
   color: black;
   width: 25vw;
 }
@@ -238,7 +277,7 @@
   user-select: none;
   font-size: 1vmax;
   width: 5vw;
-  min-width: 70px;
+  min-width: 30px;
   text-decoration: none;
 }
 .quantity{
@@ -248,6 +287,7 @@
   text-decoration-thickness: 0.1rem;
   text-decoration-color: rgb(109, 116, 109);
 }
+
 .fancy-increment-btn:hover, .fancy-decrement-btn:hover {
   color: white;
   background: black;
@@ -284,7 +324,7 @@
   font-size: 1vmax;
 
   width: 25vw;
-  min-width: 120px;
+  min-width: 127px;
   margin-top: 1vmax;
   text-decoration: none;
   display: flex;
@@ -382,11 +422,11 @@
 }
 .green-light {
   background: radial-gradient(circle at center, #0f0, #003300);
-  box-shadow: 0 0 10px 5px #0f0, 0 0 40px 10px #0f0;
+  box-shadow: 0 0 10px 5px #0f0, 0 0 50px 5px #0f0;
 }
 .red-light {
   background: radial-gradient(circle at center, #f00, #330000);
-  box-shadow: 0 0 10px 5px #f00, 0 0 40px 10px #f00;
+  box-shadow: 0 0 10px 5px #f00, 0 0 50px 5px #f00;
 }
 .green-light-content, .red-light-content{
   margin-left: 10px;
@@ -434,22 +474,3 @@
 
 
 
-/* --------multiple product CSS--------- */
-.image-selector{
-  margin-top: 10px;
-}
-.image-selector img{
-  width: 4.5vmax;
-  height: 4vmax;
-  cursor: pointer;
-  margin-left: 20px;
-  border-radius: 5px;
-  border: 1.5px solid black;
-  aspect-ratio: 3/2;
-  transition: transform 1s ease;
-}
-.image-selector img:hover{
-  filter: brightness(120%);
-  /* rotate: 15deg; */
-  transform: rotate(15deg); 
-}

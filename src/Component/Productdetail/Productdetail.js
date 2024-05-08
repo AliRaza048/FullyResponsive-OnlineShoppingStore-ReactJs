@@ -268,7 +268,22 @@ const responsive = {
       <div className='productDetail'>
         <div style={{display:'flex'}}>
           {/* <img src={product.imageurl} alt={product.name} className='productimage'/> */}
+          <div className='images-container'>
           <img src={selectedImageUrl} alt={product.name} className='productimage'/>
+          {/* ----------------multiple product image--------------- */}
+        <div className="image-selector" >
+          {product.imageurl.map((url, index) => (
+            <img
+              key={index}
+              src={url}
+              alt={`Thumbnail ${index}`}
+              className="thumbnail"
+              onClick={() => setSelectedImageUrl(url)}
+           />
+          ))}
+        </div>
+        </div>
+        {/* ----------------multiple product image--------------- */}
           <div style={{marginLeft:'5%'}}>
             <h2 style={{wordWrap:'break-word'}}>{product.name}</h2>
             <p style={{fontSize:'large', fontStyle:'oblique'}}>Rs.{product.price}</p>
@@ -382,23 +397,6 @@ const responsive = {
           </div>
         </div>
         {/* ----------Add to Cart, Checkout and Order on Whatsapp Buttons ------------*/}
-
-
-
-
-        {/* ----------------multiple product image--------------- */}
-        <div className="image-selector">
-          {product.imageurl.map((url, index) => (
-            <img
-              key={index}
-              src={url}
-              alt={`Thumbnail ${index}`}
-              className="thumbnail"
-              onClick={() => setSelectedImageUrl(url)}
-           />
-          ))}
-        </div>
-        {/* ----------------multiple product image--------------- */}
 
 
 
