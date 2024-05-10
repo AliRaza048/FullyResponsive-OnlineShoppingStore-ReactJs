@@ -13,10 +13,15 @@ import whatsappicon1 from '../Images/whatsappicon1.png'
 import usericon from '../Images/usericon.png'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import WhatsAppOrderForm from '../WhatsAppOrderForm/WhatsAppOrderForm';
 
 
 export default function Productdetail() {
+
+  //after successful login Redirect user current page mean as it is previous page
   const navigate = useNavigate();
+
+
   const [quantity, setQuantity] = useState(1);
   const { cartItemCount } = useCart(); 
   const { addToCart, addToCartProductdetail} = useCart();
@@ -27,13 +32,24 @@ export default function Productdetail() {
   // Use the useParams hook to get the id parameter from the route
   const { id } = useParams();
 
+  
+  //after successful login Redirect user current page mean as it is previous page
   //Page Showing start from top
   const location = useLocation();
+
+
+  //Page Showing start from top
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]); 
   //Page Showing start from top
 
+  //after successful login Redirect user current page mean as it is previous page
+  const handleLoginNavigate = () => {
+      // console.log("Attempting to navigate to /login")
+      navigate('/login', { state: { from: location.pathname } });
+  };
+   //after successful login Redirect user current page mean as it is previous page
 
 
   //apny apny data me sy 5 product ky baad 1 product uhtaye ga. asy hi loop chale ga aur 4 product uhta ky may also me show hon gi
@@ -195,10 +211,12 @@ export default function Productdetail() {
 
 
   //Order On Whatsapp
+  const message = `I would like to order the following item:%0aItem Name: ${product.name}%0aPrice: Rs.${product.price}%0aQuantity: ${quantity}`;
+  const encodedMessage = encodeURIComponent(message);
   const whatsappNumber = "+923265292748";
-  const message = encodeURIComponent("");
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   //Order On Whatsapp
+  
 
   
   //   const allProducts = [...productlistData1, ...productlistData2, ...productlistData3, ...doubleproductlistData1, ...doubleproductlistData2];
@@ -252,9 +270,11 @@ const responsive = {
         {/* -------cart, cartItemCount, login code-------- */}
         <div  style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
           {/* <Link to="/cart" className='link2'><img src={addtocarticon} alt="AddtoCartIconError" style={{width:'2.5vmax', height:'2vmax'}}/>Cart{cartItemCount > 0 && <span className="cart-count">{cartItemCount}</span>}</Link> */}
-          <Link to="/cart" className='link2'>{cartItemCount > 0 && <span className="cart-count" >{cartItemCount}</span>}<img src={addtocarticon} alt="AddtoCartIconError" style={{width:'2.5vmax', height:'2vmax'}}/></Link>
+          <Link to="/cart" className='link2'>{cartItemCount > 0 && <span className="cart-count" >{cartItemCount}</span>}<img src={addtocarticon} alt="AddtoCartIconError" style={{width:'3vmax', height:'2.5vmax'}}/></Link>
           {/* <Link to='/login' className='loginlink'><img src={usericon} style={{width:'55px', height:'38px' }} className='userimage'/>Login</Link> */}
-          <Link to='/login' className='loginlink'><img src={usericon} style={{width:'4vmax', height:'2.9vmax' }} className='userimage'/></Link>
+          {/* <Link to='/login' className='loginlink'><img src={usericon} style={{width:'4vmax', height:'2.9vmax' }} className='userimage'/></Link> */}
+          <img src={usericon} alt="Login" onClick={handleLoginNavigate} style={{width:'5vmax', height:'3.5vmax'}} className='userimage'/>
+
         </div>
         {/* -------cart, cartItemCount, login code-------- */}
 
@@ -378,13 +398,7 @@ const responsive = {
               </button>
             </Link>
 
-            {/* <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='fancy'> */}
-            <a
-                href={isInStock ? `whatsapp://send?text=${encodeURIComponent(`Ordering ${product.name} - Rs.${product.price}`)}` : undefined}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`fancy ${!isInStock ? 'disabled' : ''}`}
-            >
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='fancy'>
               <span className="top-key"></span>
               <span className='text'>
                 <img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>

@@ -26,7 +26,7 @@ import Homeimprovement from './Component/Viewallproducts/Homeimprovement';
 // import Checkout from './Component/Checkout/Checkout';
 import Productdetail from '../src/Component/Productdetail/Productdetail';
 import { AboutUs } from './Component/TermsAndConditions/AboutUs';
-import coder from '../src/Component/Images/coder.png'
+import coder from '../src/Component/Images/coder.png';
 
 
 function Main() {

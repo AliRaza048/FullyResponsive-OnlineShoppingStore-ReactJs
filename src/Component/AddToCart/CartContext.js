@@ -11,6 +11,24 @@ export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [cartItemCount, setCartItemCount] = useState(0);
 
+
+   //after successful login Redirect user current page mean as it is previous page
+  // Load cart items from localStorage when the component mounts
+  useEffect(() => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+      setCartItems(JSON.parse(savedCart));
+    }
+  }, []);
+
+   //after successful login Redirect user current page mean as it is previous page
+  // Save cart items to localStorage whenever cartItems change
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+
+
   function addToCartProductdetail(item) {
     setCartItems(prevItems => {
       const itemIndex = prevItems.findIndex(i => i.id === item.id);

@@ -38,17 +38,30 @@ function Cart() {
 
 
 
+  // const handleCheckoutClick = () => {
+  //   if (isLoggedIn) {
+  //     navigate('/checkout');
+  //   } 
+  //   else if (cartItems.length === 0) {
+  //     alert("Please add products to the cart before proceeding to checkout.");
+  //   }
+  //   else {
+  //     navigate('/login');
+  //   }
+  // };
   const handleCheckoutClick = () => {
     if (isLoggedIn) {
-      navigate('/checkout');
-    } 
-    else if (cartItems.length === 0) {
-      alert("Please add products to the cart before proceeding to checkout.");
-    }
-    else {
-      navigate('/login');
+      if (cartItems.length === 0) {
+        alert("Please add products to the cart before proceeding to checkout.");
+      } else {
+        navigate('/checkout');
+      }
+    } else {
+      // Redirect to login page and pass the current path for redirect after login
+      navigate('/login', { state: { from: '/cart' } });
     }
   };
+  
   
   // const handleCheckoutClick = () => {
   //   // Check if user is logged in
