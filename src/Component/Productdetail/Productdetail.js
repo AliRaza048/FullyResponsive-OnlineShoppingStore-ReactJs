@@ -4,16 +4,18 @@ import { productlistData1, productlistData2, productlistData3 } from '../Product
 import { doubleproductlistData1, doubleproductlistData2 } from '../Only2ProductCarousal/data';
 import { Link } from 'react-router-dom';
 import { useCart } from '../AddToCart/CartContext';
-import addtocarticon from '../Images/addtocarticon.png'
-import searchicon from '../Images/searchicon.png'
+import addtocarticon from '../Images/addtocarticon.png';
+import searchicon from '../Images/searchicon.png';
 import '../HomePage/Home.css';
-import './Productdetail.css'
+import './Productdetail.css';
 import Searchproduct from '../SearchProduct/Searchproduct';
-import whatsappicon1 from '../Images/whatsappicon1.png'
+import whatsappicon1 from '../Images/whatsappicon1.png';
 import usericon from '../Images/usericon.png'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import WhatsAppOrderForm from '../WhatsAppOrderForm/WhatsAppOrderForm';
+
+import { useAuth } from '../firebase/AuthContext';
 
 
 export default function Productdetail() {
@@ -28,6 +30,11 @@ export default function Productdetail() {
   const [product, setProduct] = useState(null);
   const [suggestedProducts, setSuggestedProducts] = useState([]);
   const [selectedImageUrl, setSelectedImageUrl] = useState('');
+
+  //Order On Whatsapp
+  const [showForm, setShowForm] = useState(false);
+  
+
 
   // Use the useParams hook to get the id parameter from the route
   const { id } = useParams();
@@ -49,6 +56,8 @@ export default function Productdetail() {
       // console.log("Attempting to navigate to /login")
       navigate('/login', { state: { from: location.pathname } });
   };
+
+  const { handleUserNavigation } = useAuth();
    //after successful login Redirect user current page mean as it is previous page
 
 
@@ -211,10 +220,37 @@ export default function Productdetail() {
 
 
   //Order On Whatsapp
-  const message = `I would like to order the following item:%0aItem Name: ${product.name}%0aPrice: Rs.${product.price}%0aQuantity: ${quantity}`;
-  const encodedMessage = encodeURIComponent(message);
-  const whatsappNumber = "+923265292748";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  const handleFormSubmit = (formData) => {
+    const message = `----------I would like to order this:-----------\n` +
+                    
+                    `Item Name: ${product.name}\n` +
+                    `Item ID: ${product.id}\n` +
+                    // `Per Item Price: Rs.${product.price}\n` +
+                    `Item Quantity: ${formData.productQuantity}\n` +
+                    `\n` +
+                    `----------Shipping Address----------\n` +
+                    `Name: ${formData.name}\n` +
+                    `Email: ${formData.email}\n` +
+                    `Mobile Number: ${formData.mobileNumber}\n` +
+                    `WhatsApp Number: ${formData.whatsappNumber}\n` +
+                    `Address: ${formData.address}\n` +
+                    `\n`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappNumber = "+923265292748";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
+    setShowForm(false); // Close form after submission
+};
+const handleWhatsAppOrderClick = () => {
+    setShowForm(true);
+};
+const handleCloseModal = () => {
+  setShowForm(false);
+};
+  // const message = `I would like to order the following item:%0aItem Name: ${product.name}%0aPrice: Rs.${product.price}%0aQuantity: ${quantity}`;
+  // const encodedMessage = encodeURIComponent(message);
+  // const whatsappNumber = "+923265292748";
+  // const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   //Order On Whatsapp
   
 
@@ -273,7 +309,7 @@ const responsive = {
           <Link to="/cart" className='link2'>{cartItemCount > 0 && <span className="cart-count" >{cartItemCount}</span>}<img src={addtocarticon} alt="AddtoCartIconError" style={{width:'3vmax', height:'2.5vmax'}}/></Link>
           {/* <Link to='/login' className='loginlink'><img src={usericon} style={{width:'55px', height:'38px' }} className='userimage'/>Login</Link> */}
           {/* <Link to='/login' className='loginlink'><img src={usericon} style={{width:'4vmax', height:'2.9vmax' }} className='userimage'/></Link> */}
-          <img src={usericon} alt="Login" onClick={handleLoginNavigate} style={{width:'5vmax', height:'3.5vmax'}} className='userimage'/>
+          <img src={usericon} alt="Login" onClick={handleUserNavigation} style={{width:'5vmax', height:'3.5vmax'}} className='userimage'/>
 
         </div>
         {/* -------cart, cartItemCount, login code-------- */}
@@ -398,7 +434,7 @@ const responsive = {
               </button>
             </Link>
 
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='fancy'>
+            {/* <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className='fancy'>
               <span className="top-key"></span>
               <span className='text'>
                 <img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>
@@ -406,7 +442,20 @@ const responsive = {
               </span>
               <span className="bottom-key-1"></span>
               <span className="bottom-key-2"></span>
-            </a>
+            </a> */}
+
+
+
+            <button onClick={handleWhatsAppOrderClick} className={`fancy ${!isInStock ? 'disabled' : ''}`} disabled={!isInStock}>
+              <span className="top-key"></span>
+              <span className='text'>
+                <img src={whatsappicon1} style={{width:'2rem',height:'2rem'}}/>
+                Order on WhatsApp
+              </span>
+              <span className="bottom-key-1"></span>
+              <span className="bottom-key-2"></span>
+            </button>
+            {showForm && <WhatsAppOrderForm onSubmit={handleFormSubmit} onClose={handleCloseModal} />}
             
           </div>
         </div>

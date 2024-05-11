@@ -9,10 +9,12 @@ import searchicon from '../Images/searchicon.png'
 import Searchproduct from '../SearchProduct/Searchproduct';
 import { productlistData1, productlistData2, productlistData3 } from '../ProductCarousal1/data';
 import { doubleproductlistData1, doubleproductlistData2 } from '../Only2ProductCarousal/data';
-import usericon from '../Images/usericon.png'
+import usericon from '../Images/usericon.png';
+import { useAuth } from '../firebase/AuthContext';
 
 export default function Home() {
   const { cartItemCount } = useCart();
+  const { handleUserNavigation } = useAuth();
   return (
     <>
       <div className='Part2'>
@@ -34,7 +36,8 @@ export default function Home() {
             </Link>
             
             {/* login link */}
-            <Link to='/login' className='loginlink'><img src={usericon} style={{width:'5vmax', height:'3.5vmax' }} className='userimage'/></Link>
+            {/* <Link to='/login' className='loginlink'><img src={usericon} style={{width:'5vmax', height:'3.5vmax' }} className='userimage'/></Link> */}
+            <img src={usericon} alt="Login" onClick={handleUserNavigation} style={{width:'5vmax', height:'3.5vmax' }} className='userimage'/>
           </div>
       </div>
 

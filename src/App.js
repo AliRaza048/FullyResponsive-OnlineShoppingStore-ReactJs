@@ -23,10 +23,12 @@ import Forgotpassword from './Component/Authentication/Forgotpassword'
 import Topcollections from './Component/Viewallproducts/Topcollections';
 import Electronicscollection from './Component/Viewallproducts/Electronicscollection';
 import Homeimprovement from './Component/Viewallproducts/Homeimprovement';
-// import Checkout from './Component/Checkout/Checkout';
+import Checkout from './Component/Checkout/Checkout';
 import Productdetail from '../src/Component/Productdetail/Productdetail';
 import { AboutUs } from './Component/TermsAndConditions/AboutUs';
 import coder from '../src/Component/Images/coder.png';
+import { AuthProvider } from '../src/Component/firebase/AuthContext';
+import Receipt from '../src/Component/Receipt/Receipt';
 
 
 function Main() {
@@ -70,6 +72,7 @@ function Main() {
     )}
 
     <CartProvider>
+    <AuthProvider>
       <Routes>
         <Route path='/' Component={Home} />
         <Route path='/contact-us' Component={Contact} />
@@ -87,11 +90,12 @@ function Main() {
         <Route path='/top_collections' Component={Topcollections} />
         <Route path='/electronics' Component={Electronicscollection} />
         <Route path='/home_improvement' Component={Homeimprovement} />
-        {/* <Route path='/checkout' Component={Checkout} /> */}
+        <Route path='/checkout' Component={Checkout} />
         <Route path="/product_detail/:id" Component={Productdetail} />
         <Route path='/about-us' Component={AboutUs} />
-         
+        <Route path='/receipt' element={<Receipt />} />
       </Routes>
+      </AuthProvider>
     </CartProvider>
         
     {renderHeaderAndFooter && (

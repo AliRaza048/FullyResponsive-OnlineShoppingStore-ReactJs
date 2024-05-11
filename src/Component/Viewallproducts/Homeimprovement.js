@@ -10,7 +10,8 @@ import './Viewallproducts.css'
 import Searchproduct from '../SearchProduct/Searchproduct';
 import { productlistData1, productlistData2 } from '../ProductCarousal1/data';
 import { doubleproductlistData1, doubleproductlistData2 } from '../Only2ProductCarousal/data';
-import usericon from '../Images/usericon.png'
+import usericon from '../Images/usericon.png';
+import { useAuth } from '../firebase/AuthContext';
 
 export default function Homeimprovement() {
 
@@ -37,6 +38,7 @@ export default function Homeimprovement() {
     // console.log("Attempting to navigate to /login")
     navigate('/login', { state: { from: location.pathname } });
     };
+    const { handleUserNavigation } = useAuth();
     //after successful login Redirect user current page mean as it is previous page
 
 
@@ -53,7 +55,7 @@ export default function Homeimprovement() {
                 <Link to="/cart" className='link2'>{cartItemCount > 0 && <span className="cart-count" >{cartItemCount}</span>}<img src={addtocarticon} alt="AddtoCartIconError" style={{width:'3vmax', height:'2.5vmax'}}/></Link>
                 {/* <Link to='/login' className='loginlink'><img src={usericon} style={{width:'55px', height:'38px' }} className='userimage'/>Login</Link> */}
                 {/* <Link to='/login' className='loginlink'><img src={usericon} style={{width:'4vmax', height:'2.9vmax' }} className='userimage'/></Link> */}
-                <img src={usericon} alt="Login" onClick={handleLoginNavigate} style={{width:'5vmax', height:'3.5vmax' }} className='userimage'/>
+                <img src={usericon} alt="Login" onClick={handleUserNavigation} style={{width:'5vmax', height:'3.5vmax' }} className='userimage'/>
             </div>
         </div>
 

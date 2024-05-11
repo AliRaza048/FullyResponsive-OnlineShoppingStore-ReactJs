@@ -3,6 +3,7 @@ import './Cart.css'
 import { useCart } from './CartContext';
 import { useNavigate  } from "react-router-dom";
 // import Login from '../Authentication/Login';
+import { useAuth } from '../firebase/AuthContext';
 
 
 function Cart() {
@@ -12,6 +13,7 @@ function Cart() {
 
 
   const { cartItems, removeFromCart, incrementQuantity, decrementQuantity } = useCart();
+  const { user, handleUserNavigation } = useAuth();
 
 
 
@@ -49,16 +51,27 @@ function Cart() {
   //     navigate('/login');
   //   }
   // };
+  // const handleCheckoutClick = () => {
+  //   if (isLoggedIn) {
+  //     if (cartItems.length === 0) {
+  //       alert("Please add products to the cart before proceeding to checkout.");
+  //     } else {
+  //       navigate('/checkout');
+  //     }
+  //   } else {
+  //     // Redirect to login page and pass the current path for redirect after login
+  //     navigate('/login', { state: { from: '/cart' } });
+  //   }
+  // };
   const handleCheckoutClick = () => {
-    if (isLoggedIn) {
+    if (user) {  // Use the user object to check authentication
       if (cartItems.length === 0) {
         alert("Please add products to the cart before proceeding to checkout.");
       } else {
-        navigate('/checkout');
+        navigate('/checkout');  // Utilize the existing navigation handler
       }
     } else {
-      // Redirect to login page and pass the current path for redirect after login
-      navigate('/login', { state: { from: '/cart' } });
+      handleUserNavigation();  // This will navigate to login if not logged in
     }
   };
   

@@ -1,18 +1,43 @@
-.order-form-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Add this CSS to your main stylesheet */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* Make sure this is above all other content */
 }
 
-.order-form-overlay form {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 500px; /* Adjust width as necessary */
+  z-index: 1051; /* Above the backdrop */
 }
+
+.ri-close-circle-fill {
+  background: none; /* Removes any background */
+  border: none; /* Removes any border */
+  color: black; /* Ensures the icon is black */
+  font-size: 30px; /* Increase the size of the icon */
+  display: inline-block; /* Proper alignment */
+  vertical-align: middle; /* Center aligns vertically if needed */
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.ri-close-circle-fill:hover{
+  /* transform: translateY(-5px);  */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
