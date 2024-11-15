@@ -33,7 +33,7 @@ export default function Checkout() {
         <div className='checkoutformside'>
           <form>
 
-            <h2>🥰shopit🥰</h2>
+            <h2>🥰inPKonlineshop🥰</h2>
 
             <label> Full name </label>
             <div class="wrapper">

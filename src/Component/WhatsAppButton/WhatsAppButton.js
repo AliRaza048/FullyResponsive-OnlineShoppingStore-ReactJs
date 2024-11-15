@@ -4,11 +4,15 @@ import './WhatsAppButton.css';
 import whatsappicon2 from '../Images/whatsappicon2.png'
 
 const WhatsAppButton = () => {
-  const whatsappNumber = "+923091416573";
+  const whatsappNumber = "+923265292748";
   const message = encodeURIComponent("Hello, I Need Help?");
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
-
+   // Base64 encoding of the WhatsApp number
+  //  const encodedWhatsAppNumber = btoa("+923265292748");
+  //  const message = encodeURIComponent("");console.log('WhatsAppButton component rendered
+  //  const whatsappUrl = `https://wa.me/${atob(encodedWhatsAppNumber)}?text=${message}`;
+   
 
   return (
     <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="whatsapp-button" style={{ textDecoration: 'none'}}>

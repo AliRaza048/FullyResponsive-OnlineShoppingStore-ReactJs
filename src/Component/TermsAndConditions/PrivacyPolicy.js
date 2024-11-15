@@ -26,20 +26,20 @@ function PrivacyPolicy (){
       <h2>2. Information Collection:</h2>
       <ul>
         <li>
-          <strong>Business Name:</strong> SHOPIT
+          <strong>Business Name:</strong> INPK Online Shop
         </li>
         <li>
-          <strong>Business Address:</strong>Country Pakistan
+          <strong>Business Address:</strong> Labour Colony Joianwala More, District Sheikhupura, Province Punjab, Country Pakistan
         </li>
       </ul>
 
       <h2>3. Contact Information:</h2>
       <ul>
         <li>
-          Users can contact us via email: <a href="mailto:muhammadaliraza340p@gmail.com">muhammadaliraza340@gmail.com</a>
+          Users can contact us via email: <a href="mailto:inpkonlineshop@gmail.com">inpkonlineshop@gmail.com</a>
         </li>
         <li>
-          Users can contact us via WhatsApp: <a href="tel:+923091416573">+92-309-1416573</a>
+          Users can contact us via WhatsApp: <a href="tel:+923265292748">+92-326-5292748</a>
         </li>
       </ul>
 
