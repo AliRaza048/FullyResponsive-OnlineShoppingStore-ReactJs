@@ -7,7 +7,7 @@
   letter-spacing: 0.1vw;
   padding: 0 2vmax;
   font-size: 1.7vmax;
-  margin-top: -8vmax;
+  margin-top: -7vmax;
   /* background-color: aqua; */
 }
 /* .searchbar{
@@ -63,6 +63,10 @@
 
 
 @media (max-width: 768px) {
+  .Part3{
+    height: auto;
+    padding-top: 2vmax;
+  }
 .Part2{
   display: flex;
   justify-content: space-between;
@@ -71,7 +75,8 @@
   letter-spacing: 0.1vw;
   padding: 0 1vmax;
   font-size: 1.7vmax;
-  margin-top: -9vmax;
+  margin-top: -3.5vmax;
+  margin-left: 7vmax;
 }
 .loginlink{
   font-size: 10px;

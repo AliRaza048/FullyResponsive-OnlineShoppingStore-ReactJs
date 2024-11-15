@@ -35,7 +35,6 @@ header::after {
     left: 100%;
   }
 }
-
     .div1chlid1{
       letter-spacing: 0.1vw;
       height: 4.5vmax;
@@ -45,6 +44,7 @@ header::after {
       padding: 0 4.5vw;
       margin-top: 5px;
       font-size: 3vh;
+      margin-left: 3vmax;
       /* border-bottom: 2px solid #dadada; */
     }
       .link1{
@@ -53,7 +53,7 @@ header::after {
         font-weight: bold;
         font-size: 3vmax;
         margin-top: 10px;
-        margin-left: 5vmax;
+        
         /* text-shadow: .0625rem .0625rem .0625rem red; */
         font-family: cursive;
 
@@ -251,8 +251,13 @@ header::after {
   }
 
   @media (max-width: 768px ) and (min-width: 481px ) {
+    .div1child2{
+      display: none;
+    }
+    
     .link1{
-      font-size: 2vmax;
+      font-size: 2.5vmax;
+      margin-left: 20vmax;
     }
     footer{
       height: 60vh;      
@@ -271,7 +276,7 @@ header::after {
       width: 100;
       height: 85%;
       /* margin-top: 0.5rem; */
-      margin-left: -12px;
+      margin-left: -7px;
     }
     footer .OLC .ourmission{
       margin-left: 4vmax;
@@ -296,6 +301,13 @@ header::after {
     }
   }
   @media (max-width: 480px) {
+    .div1child2{
+      display: none;
+    }
+    .link1{
+      font-size: 2vmax;
+     margin-left: 10vmax;
+    }
     footer{
       width: 100%;
 
@@ -369,6 +381,154 @@ header::after {
   }
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar container */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -50%; /* Initially hidden outside the screen */
+    width: 50%;
+    height: 100%;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  /* Overlay background */
+  .navbar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    visibility: hidden;
+    z-index: 999;
+  }
+  
+  .navbar-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* When navbar is open */
+  .navbar.open {
+    left: 0; /* Slide in from left */
+  }
+  
+  /* Navbar links */
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+  }
+  
+  .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  /* Navbar toggle button (hamburger icon) */
+  .navbar-toggle {
+    /* position: fixed; */
+    position: absolute;
+    top: 4vmax;
+    left: 13px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #000; /* Default to black for three-line hamburger */
+    margin: 2.5px 0;
+    transition: 0.4s;
+  }
+  
+  /* Change to cross */
+  .bar1 {
+    transform: rotate(-45deg) translate(-5px, 10px);
+    background-color: #fff; /* Change to white for cross */
+  }
+  
+  .bar2 {
+    opacity: 0;
+  }
+  
+  .bar3 {
+    transform: rotate(45deg) translate(-5px, -10px);
+    background-color: #fff; /* Change to white for cross */
+  }
+  
+  /* Responsive styles for larger screens */
+  @media (min-width: 769px) {
+    .navbar {
+      width: 25%; /* On larger screens, you can change the width */
+    }
+    .navbar-toggle {
+      position: fixed;
+      top: 3.5rem;
+      left: 15px;
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
 
 /* .div1{

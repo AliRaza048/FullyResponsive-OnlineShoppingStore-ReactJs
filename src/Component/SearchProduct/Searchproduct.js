@@ -54,7 +54,7 @@ const Searchproduct = ({ productData }) => {
               key={item.id}
               id={item.id}
               name={item.name}
-              imageurl={item.imageurl}
+              imageUrl={item.imageUrl}
               price={item.price}
               addToCart={addToCart}
             />
