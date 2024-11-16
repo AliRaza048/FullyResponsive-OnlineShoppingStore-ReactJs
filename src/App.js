@@ -5,7 +5,7 @@ import Contact from './Component/Contact/Contact';
 import Cart from './Component/AddToCart/Cart';
 import {BrowserRouter, Routes, Route, Link, NavLink, useLocation} from "react-router-dom";
 import { CartProvider } from '../src/Component/AddToCart/CartContext';
-import logo from '../src/Component/Images/blacklogo.png';
+import shopit from '../src/Component/Images/shopit.png';
 import WhatsAppButton from '../src/Component/WhatsAppButton/WhatsAppButton';
 import RefundPolicy from './Component/TermsAndConditions/RefundPolicy';
 import PrivcyPolicy from './Component/TermsAndConditions/PrivacyPolicy';
@@ -130,7 +130,7 @@ function Main() {
           </div>
 
           <div className='logo'>
-          <Link to="/" className='link1' style={{marginLeft:'-2vmax'}}><img src={logo} alt='error' /></Link>
+          <Link to="/" className='link1' style={{marginLeft:'-2vmax'}}><img src={shopit} alt='error' /></Link>
           </div>
 
           <div className='contactus'>
