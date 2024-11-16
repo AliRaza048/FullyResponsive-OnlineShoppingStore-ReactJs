@@ -1,4 +1,3 @@
-
 header {
   height: 2.7vmax;
   background-color: black;
@@ -93,15 +92,6 @@ header::after {
       }
 
 
-      /* .div1child1_2{
-        padding: 0 2vw;
-      }
-        .link2{
-          color: black;
-          text-decoration: none;
-          font-weight: bold;
-        } */
-
 
 
     .div1child2{
@@ -126,13 +116,8 @@ header::after {
       }
       .link3:hover{
         text-decoration: underline;
-        /* text-underline-offset: 0.9rem; */
         text-underline-offset: 1.2vmax;
         text-decoration-thickness: 0.1rem;
-
-        /* background: linear-gradient(-45deg, #e30cfa 0%, #14bafc 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;  */
         text-shadow: .0125rem .0125rem .0125rem red;
         transform: translateY(-5px);
         filter: brightness(150%);
@@ -140,11 +125,8 @@ header::after {
   .active{
     color: black;
     text-decoration: underline;
-
-    /* text-underline-offset: 0.9rem; */
     text-underline-offset: 1.2vmax;
     text-decoration-thickness: 0.1rem;
-
     text-shadow: .0125rem .0125rem 1rem #e600ff;
   }
   footer{
@@ -156,7 +138,6 @@ header::after {
     border-top-right-radius: 2vmax;
     box-shadow: 0vmax 0vmax 0.4vmax black;
     font-family: cursive;
-
     position: relative;
     overflow: hidden;
   }
@@ -275,7 +256,6 @@ header::after {
     footer .OLC .logo img{
       width: 100;
       height: 85%;
-      /* margin-top: 0.5rem; */
       margin-left: -7px;
     }
     footer .OLC .ourmission{
@@ -310,7 +290,6 @@ header::after {
     }
     footer{
       width: 100%;
-
       background-color: black;
       color: white;
       height: 100%;
@@ -321,7 +300,6 @@ header::after {
       font-size: 2vmax;
     }
     footer .OLC div{
-    
       width: 75%;
       margin-top: 3vmax;
       margin-left: 13%;
@@ -329,7 +307,6 @@ header::after {
     }
     footer .OLC .ourmission{
       margin-left: 13%;
-     
     }
 
     footer .OLC .ourmission h3, footer .OLC .contactus h3{
@@ -379,27 +356,6 @@ header::after {
       font-size: 1.7vmax;
     }
   }
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 body {
@@ -462,7 +418,6 @@ body {
   
   /* Navbar toggle button (hamburger icon) */
   .navbar-toggle {
-    /* position: fixed; */
     position: absolute;
     top: 4vmax;
     left: 13px;
@@ -475,12 +430,11 @@ body {
   .bar {
     height: 3px;
     width: 25px;
-    background-color: #000; /* Default to black for three-line hamburger */
+    background-color: #000;
     margin: 2.5px 0;
     transition: 0.4s;
   }
   
-  /* Change to cross */
   .bar1 {
     transform: rotate(-45deg) translate(-5px, 10px);
     background-color: #fff; /* Change to white for cross */
@@ -511,112 +465,3 @@ body {
     }
     
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-/* .div1{
-  height: 5vh;
-  background-color: white;
-  border-bottom: 2px solid #dadada;
-}
-.div1 header{
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  padding-top: .5vh;
-  font-weight: bolder;
-  font-size: 1.5vmax;
-}
-.div1chlid1{
-  letter-spacing: 0.1vw;
- 
-  height: 250%;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  padding: 0 4vw;
-  font-size: 3vh;
-  border-bottom: 2px solid #dadada;
-  
-}
-.div1child1_2{
-  
-  padding: 0 2vw;
-}
-.link1{
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 6vh;
-  text-shadow: .0625rem .0625rem .0625rem red;
-}
-.link2{
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-} */
-
-
-
-
-
-
-/* .annoucement_bar{
-  background-color: black;
-  color: white;
-  text-align: center;
-  text-shadow: .0625rem .0625rem .0625rem white;
-  font-display: auto;
-}
-
-
-.logolink{
-  letter-spacing: 0.2rem;
-  color: black;
-  text-decoration: none;
-  text-shadow: .0625rem .0625rem .0625rem red; 
-}
-
-
-
-
-
-.links{
-  text-align: center;
-  font-size: calc(0.8rem + 1vmin);
-  font-weight: bold;
-}
-.link{
-  color: black;
-  text-decoration: none;
-  padding-left: 1rem;
-}
-.link:hover{
-  text-underline-offset: 0.8rem;
-  text-decoration-thickness: 0.1rem;
-  text-shadow: .0125rem .0125rem .0125rem red;
-}
-.active{
-  color: black;
-  text-decoration: underline;
-  text-underline-offset: 0.8rem;
-  text-decoration-thickness: 0.1rem;
-  text-shadow: .0125rem .0125rem .0125rem red;
-} */

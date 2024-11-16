@@ -3,11 +3,9 @@ import './TermsAndConditions.css'
 
 export default function ContactInformation() {
 
-   //Page Showing start from top
    useEffect(() => {
     window.scrollTo(0, 0);
 }, []); 
-//Page Showing start from top
 
     return (
       <>
@@ -16,25 +14,25 @@ export default function ContactInformation() {
 
       <h2>1. Business Address:</h2>
       <ul>
-        <li>Labor Colony Joianwala More, District Sheikhupura, Province Punjab, Country Pakistan</li>
+        <li>Sheikhupura, Province Punjab, Country Pakistan</li>
       </ul>
 
       <h2>2. Email Address:</h2>
       <ul>
-        <li><a href="mailto:inpkonlineshop@gmail.com" target="_blank" rel="noopener noreferrer">inpkonlineshop@gmail.com</a></li>
+        <li><a href="mailto:muhammadaliraza340@gmail.com" target="_blank" rel="noopener noreferrer">muhammadaliraza340@gmail.com</a></li>
       </ul>
 
       <h2>3. Phone and WhatsApp Number:</h2>
       <ul>
-        <li>Phone Number: +92-326-5292748</li>
-        <li>WhatsApp Number: <a href={"tel:+923265292748"}>+92-326-5292748</a> (Direct calls are welcomed, but contacting via WhatsApp is preferred.)</li>
+        <li>Phone Number: +92-309-1416573</li>
+        <li>WhatsApp Number: <a href={"tel:+923265292748"}>+92-309-1416573</a> (Direct calls are welcomed, but contacting via WhatsApp is preferred.)</li>
       </ul>
 
       <h2>4. Social Media:</h2>
       <ul >
-        <li>Facebook: <a href="https://www.facebook.com/inpkonlineshop" target="_blank" rel="noopener noreferrer">https://www.facebook.com/inpkonlineshop</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/inpkonlineshop?igsh=ZGNjOWZkYTE3MQ==" target="_blank" rel="noopener noreferrer">https://www.instagram.com/inpkonlineshop?igsh=ZGNjOWZkYTE3MQ==</a></li>
-        <li>TikTok: <a href="https://www.tiktok.com/@inpkonlineshop?" target="_blank" rel="noopener noreferrer">https://www.tiktok.com/@inpkonlineshop?</a></li>
+        <li>Facebook: <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">https://www.facebook.com/</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">https://www.instagram.com/</a></li>
+        <li>TikTok: <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">https://www.tiktok.com/</a></li>
       </ul>
 
       <h2>5. Availability:</h2>

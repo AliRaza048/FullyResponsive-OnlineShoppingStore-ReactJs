@@ -15,24 +15,12 @@
   width: 50%;
   height: 100%;
 }
-/* .imageside p{
-  font-size: large;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: lighter;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 70%;
-} */
 .formside{
   background-color: white;
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  
 }
 form{
   margin-left: 7rem;
@@ -44,7 +32,6 @@ form{
 }
 form p{
   padding: 15px;
-  /* padding-left: 10vw; */
   text-align: center;
   margin-left: -65px;
 }
@@ -77,7 +64,6 @@ form p{
 }
 .formside form button{
   width: 60%;
-  /* max-width: 500px; */
   height: 40px;
   background-color: #f26a49;
   color: white;
@@ -94,7 +80,6 @@ form p{
 .navlink{
   text-decoration: none;
   color: #e46545;
-  /* font-size: large; */
   font-weight: bold;
 }
 .navlink:hover{
@@ -104,8 +89,6 @@ form p{
 }
 
 
-/* Add this at the end of your CSS file */
-
 @media screen and (max-width: 768px) {
   .Background {
     flex-direction: column;
@@ -113,11 +96,11 @@ form p{
 
   .loginimageside{
     width: 100%;
-    height: 40vh; /* Adjust the height as needed */
+    height: 40vh;
   }
   .registerimageside {
     width: 100%;
-    height: 40vh; /* Adjust the height as needed */
+    height: 40vh; 
   }
 
   .formside {
@@ -143,7 +126,6 @@ form p{
     margin-left: 3rem;
   }
   form{
-    /* margin-left: 3em; */
     margin-top: 10px;
   }
   .terms-pri{

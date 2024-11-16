@@ -1,5 +1,4 @@
 .Part1{
-    /* background-color: aqua; */
     padding: 3%;
     padding-top: 3%;
   }
@@ -9,18 +8,3 @@
     font-size: 2vmax;
     text-shadow: .0625rem .0625rem .0625rem red;
   }
-  
-  /* Draw Text 2 Sided line code css */
-  /* .text-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin: .7rem;
-  }
-  .horizontal-line {
-    flex: 1;
-    height: 1px;
-    background-color: black;
-    margin: 0 .6rem;
-  } */
-  /* Draw Text 2 Sided line code css */

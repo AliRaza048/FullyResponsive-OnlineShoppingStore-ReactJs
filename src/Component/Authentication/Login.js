@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import './Loginandregister.css'
-import {BrowserRouter, Routes, Route, Link, NavLink, useLocation, useNavigate} from "react-router-dom";
-import { CheckBox } from 'react-native-web'
-// import loginformimage from '../Images/loginformimage.png'
+import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../firebase/firebase";
 
@@ -72,7 +70,6 @@ export default function Login() {
     <>
       <div className='Background'>
         <div className='loginimageside'>
-          {/* <p>Start For Free & Get Attractive Offers.</p> */}
         </div>
         <div className='formside'>
           
@@ -92,16 +89,6 @@ export default function Login() {
                   {emailError}
                 </div>
               )}
-          {/* {!isEmailValid && email !== '' && (
-            <div style={{ color: 'red', fontSize:'15px' }}>
-              Email wrong formatting
-            </div>
-          )}
-          {isEmailValid && email !== '' && (
-          <div style={{ color: 'green', fontSize: '15px' }}>
-            Excellent
-          </div>
-        )} */}
             </div>
             
             <label> Password </label>
@@ -121,16 +108,7 @@ export default function Login() {
               )}
             </div>
             <NavLink to="/forgotpassword" className='navlink' style={{display:'flex', justifyContent:'end', marginRight:'19%', marginTop:'10px'}}>Forgot Password</NavLink>
-            {/* <div style={{display:'flex'}}>
-              <input 
-                type="checkbox" 
-                id="rememberme" 
-              />
-              <label>
-                Remember me.
-              </label>
-            </div> */}
-            
+
             <button type="submit">Login</button>
             <p>Don't have an account? <NavLink to="/register" className='navlink'>Register</NavLink></p>
           </form>

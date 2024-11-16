@@ -3,11 +3,10 @@ import './TermsAndConditions.css'
 
 function PrivacyPolicy (){
 
-   //Page Showing start from top
    useEffect(() => {
     window.scrollTo(0, 0);
 }, []); 
-//Page Showing start from top
+
 
     return (
       <>
@@ -26,20 +25,20 @@ function PrivacyPolicy (){
       <h2>2. Information Collection:</h2>
       <ul>
         <li>
-          <strong>Business Name:</strong> INPK Online Shop
+          <strong>Business Name:</strong> SHOPIT
         </li>
         <li>
-          <strong>Business Address:</strong> Labour Colony Joianwala More, District Sheikhupura, Province Punjab, Country Pakistan
+          <strong>Business Address:</strong> Sheikhupura, Province Punjab, Country Pakistan
         </li>
       </ul>
 
       <h2>3. Contact Information:</h2>
       <ul>
         <li>
-          Users can contact us via email: <a href="mailto:inpkonlineshop@gmail.com">inpkonlineshop@gmail.com</a>
+          Users can contact us via email: <a href="mailto:muhammadaliraza340@gmail.com">muhammadaliraza340@gmail.com</a>
         </li>
         <li>
-          Users can contact us via WhatsApp: <a href="tel:+923265292748">+92-326-5292748</a>
+          Users can contact us via WhatsApp: <a href="tel:+923091416573">+92-309-1416573</a>
         </li>
       </ul>
 

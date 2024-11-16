@@ -2,16 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-top: 1.5rem; */
     padding-bottom: 3rem;
     margin-left: -5%;
-    
-    /* background-color: #f26a49; */
   }
   
   .contactpage form {
     background-color: white;
-    /* background-color: #f26a49; */
     padding-top: 2.5vmax;
     padding-left: 2.5vmax;
     padding-right: 2vmax;
@@ -70,14 +66,7 @@
 
   @media (max-width: 768px) {
     .contactpage {
-      /* display: flex;
-      justify-content: center;
-      align-items: center; */
-      /* padding-top: 1.5rem; */
-      /* padding-bottom: 3rem; */
-      /* padding-left: -20%; */
       margin-left: -30%;
-      /* background-color: #f26a49; */
     }
     .contactpage button {
       margin-left: 25%;

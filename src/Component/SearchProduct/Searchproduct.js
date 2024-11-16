@@ -8,13 +8,11 @@ const Searchproduct = ({ productData }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isListVisible, setIsListVisible] = useState(false);
 
-  
   const filterProducts = (products, query) => {
     return products.filter(product => product.name.toLowerCase().includes(query.toLowerCase()));
   };
+  
   const filteredProducts = filterProducts(productData, searchQuery);
-
-
 
   const handleDocumentClick = (e) => {
     // Check if the clicked element is outside the search container
@@ -34,7 +32,6 @@ const Searchproduct = ({ productData }) => {
   }, []); 
 
   return (
-    // <div className={`search-products-container ${filteredProducts.length > 0 ?  'show-list' : ''}`}>
     <div className={`search-products-container ${isListVisible  ? 'show-list' : ''}`}>
       <input
         type='text'

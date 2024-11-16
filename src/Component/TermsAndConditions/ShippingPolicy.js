@@ -3,11 +3,10 @@ import './TermsAndConditions.css'
 
 function ShippingPolicy (){
   
-   //Page Showing start from top
    useEffect(() => {
     window.scrollTo(0, 0);
 }, []); 
-//Page Showing start from top
+
 
     return (
       <>

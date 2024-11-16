@@ -23,11 +23,6 @@ export default function Products(props) {
           <h2 className="name">{name}</h2>
         </Link>
         <p className="price">Rs.{price}</p>
-        {/* <p>{props.description}</p> */}
-
-        {/* niche commented button ko use karne ky liye os sy niche wale button ko comment kar dena
-        aur upar isInStock aur handleAddToCartClick arrow function ko bi comment kar dena. */}
-        {/* <p><button className='button type1' onClick={()=>addToCart({id, imageurl, name, price})} disabled={!isInStock}>Add to Cart</button></p> */}
         <p><button className='button type1' onClick={handleAddToCartClick}>Add to Cart</button></p>
       
       </div>

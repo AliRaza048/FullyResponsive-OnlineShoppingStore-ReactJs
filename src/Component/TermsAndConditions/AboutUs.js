@@ -4,11 +4,9 @@ import './TermsAndConditions.css'
 
 export const AboutUs = () => {
 
-  //Page Showing start from top
   useEffect(() => {
     window.scrollTo(0, 0);
 }, []); 
-//Page Showing start from top
 
   return (
     <>
@@ -17,7 +15,7 @@ export const AboutUs = () => {
 
       <h2>1. Founder's Journey:</h2>
       <p>
-        Dev-Ali initiated this venture during his sixth semester in BS Software Engineering at COMSATS University Islamabad, Abbottabad Campus. Formerly engaged with Shopify, his passion for web development led him to learn ReactJS and establish his online shopping website in April 2023.
+        Dev-Ali initiated this venture during his sixth semester in BS Software Engineering at COMSATS University Islamabad. Formerly engaged with Shopify, his passion for web development led him to learn ReactJS and establish his online shopping website in April 2023.
       </p>
 
       <h2>2. Mission:</h2>

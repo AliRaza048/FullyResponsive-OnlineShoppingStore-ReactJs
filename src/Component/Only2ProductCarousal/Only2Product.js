@@ -25,11 +25,6 @@ export default function Only2Product(props) {
         <p className="doubleprice">Rs.{price}</p>
         {/* <p>{props.description}</p> */}
         <p>
-        {/* <Link to="/shopnow"><button onClick={()=>addToCart({id, imageUrl, name, price})}>Shop Now</button></Link> */}
-
-        {/* niche commented link button ko use karne ky liye os sy niche wale isInStock condition
-        ko comment kar dena aur upar isInStock aur handleAddToCartClick arrow function ko bi comment kar dena. */}
-        {/* <Link to="/shopnow"><button className='button type1' onClick={()=>addToCart({id, imageurl, name, price})}>Shop Now</button></Link> */}
         {isInStock ? (
           <Link to="/shopnow">
             <button className='button type1' onClick={handleAddToCartClick}>Shop Now</button>

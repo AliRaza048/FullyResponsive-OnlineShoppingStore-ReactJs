@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import './Checkout.css'
-import {BrowserRouter, Routes, Route, Link, NavLink, useLocation} from "react-router-dom";
 
 export default function Checkout() {
     const [contactNo, setContactNo] = useState('');
@@ -33,7 +32,7 @@ export default function Checkout() {
         <div className='checkoutformside'>
           <form>
 
-            <h2>🥰inPKonlineshop🥰</h2>
+            <h2>🥰shopit🥰</h2>
 
             <label> Full name </label>
             <div class="wrapper">

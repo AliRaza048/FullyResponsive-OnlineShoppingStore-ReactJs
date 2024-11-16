@@ -3,11 +3,9 @@ import './TermsAndConditions.css'
 
 function RefundPolicy (){
 
-   //Page Showing start from top
    useEffect(() => {
     window.scrollTo(0, 0);
 }, []); 
-//Page Showing start from top
 
     return (
       <>

@@ -3,11 +3,9 @@ import './TermsAndConditions.css'
 
 function TermsOfService (){
   
-   //Page Showing start from top
    useEffect(() => {
     window.scrollTo(0, 0);
 }, []); 
-//Page Showing start from top
 
     return (
       <>

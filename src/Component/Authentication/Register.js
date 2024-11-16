@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Loginandregister.css'
-import {BrowserRouter, Routes, Route, Link, NavLink, useLocation, useNavigate  } from "react-router-dom";
-import { auth } from "../firebase/firebase";  // Adjust the path as necessary
+import {Link, NavLink, useNavigate  } from "react-router-dom";
+import { auth } from "../firebase/firebase"; 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 
@@ -44,7 +44,6 @@ export default function Register() {
           alert('That email address is already in use!');
       }
         console.error('Error registering user:', error.message);
-        // Show an error message to the user
       }
     }
   };

@@ -17,15 +17,13 @@ function WhatsAppOrderForm({ onSubmit, onClose  }) {
     const handleChange = (e) => {
         const { name, value } = e.target;
         if (name === "productQuantity") {
-            // Ensure the input is numeric and greater than 0
-            const re = /^[1-9]\d*$/;  // Regex to allow only numbers greater than 0
+            const re = /^[1-9]\d*$/;  
             if (value === '' || re.test(value)) {
                 setFormData({ ...formData, [name]: value });
             }
         } else {
             setFormData({ ...formData, [name]: value });
         }
-        // Clear errors when user starts correcting them
         if (errors[name]) {
             setErrors({ ...errors, [name]: null });
         }
@@ -34,7 +32,6 @@ function WhatsAppOrderForm({ onSubmit, onClose  }) {
     
 
     const handleSubmit = () => {
-        // Check required fields
         let hasError = false;
         let newErrors = {};
 
@@ -57,11 +54,11 @@ function WhatsAppOrderForm({ onSubmit, onClose  }) {
 
         if (hasError) {
             setErrors(newErrors);
-            return; // Stop the submission if there are errors
+            return; 
         }
 
-        onSubmit(formData);// Pass formData back to parent component
-        onClose(); // Close the form
+        onSubmit(formData);
+        onClose();
     };
 
     return (

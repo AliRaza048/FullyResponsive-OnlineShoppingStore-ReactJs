@@ -64,7 +64,6 @@ export default function Contact() {
 
         <label> Write Message
           <textarea name='Message' placeholder='Message...' required className='textarea' />
-          {/* <input type='text'  name='Message' placeholder='Message...' required style={{height:100}}/> */}
         </label>
       
         <button type="submit">Send</button>

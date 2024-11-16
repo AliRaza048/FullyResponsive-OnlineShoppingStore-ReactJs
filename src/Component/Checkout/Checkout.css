@@ -9,15 +9,6 @@
     width: 50%;
     height: 100%;
   }
-  /* .imageside p{
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: lighter;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 70%;
-  } */
 
   .background .checkoutformside{
     background-color: white;
@@ -25,8 +16,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
     
   }
   .background .checkoutformside h2{
