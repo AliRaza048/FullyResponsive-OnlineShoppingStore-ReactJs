@@ -1,6 +1,6 @@
 import React from 'react';
 import './Products.css'
-import { name } from 'tar/lib/types';
+// import { name } from 'tar/lib/types';
 import { Link } from 'react-router-dom';
 
 export default function Products(props) {

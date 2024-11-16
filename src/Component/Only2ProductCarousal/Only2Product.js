@@ -1,6 +1,6 @@
 import React from 'react';
 import './Only2Product.css'
-import { name } from 'tar/lib/types';
+// import { name } from 'tar/lib/types';
 import {Link, NavLink} from "react-router-dom";
 
 export default function Only2Product(props) {
