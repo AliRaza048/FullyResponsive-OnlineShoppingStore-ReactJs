@@ -137,7 +137,7 @@ header::after {
     border-top-left-radius: 2vmax;
     border-top-right-radius: 2vmax;
     box-shadow: 0vmax 0vmax 0.4vmax black;
-    font-family: cursive;
+    /* font-family: cursive; */
     position: relative;
     overflow: hidden;
   }
