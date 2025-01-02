@@ -154,7 +154,7 @@
   .SuggestionsCard {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 22vmax;
-    margin: auto 0.7rem;
+    margin: auto 0.1rem;
     text-align: center;
     font-family: arial;
     font-size: 1.5vmax;

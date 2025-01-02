@@ -12,6 +12,9 @@ import { doubleproductlistData1, doubleproductlistData2 } from '../Only2ProductC
 import usericon from '../Images/usericon.png';
 import { useAuth } from '../firebase/AuthContext';
 
+import DataProvider from "../ProductCarousal1/DataProvider";
+
+
 export default function Home() {
   const { cartItemCount } = useCart();
   const { handleUserNavigation } = useAuth();
@@ -36,7 +39,9 @@ export default function Home() {
         <ImageSlider />
       </div>
 
+      <DataProvider>
       <CarousalProducts />
+      </DataProvider>
     </>
   );
 }

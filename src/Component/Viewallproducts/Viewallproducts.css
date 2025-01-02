@@ -10,7 +10,7 @@
 @media (max-width: 768px) {
   .view-all-products{
     display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
   gap: 0px;
   padding: 0vmax;
   margin-top: 0px;

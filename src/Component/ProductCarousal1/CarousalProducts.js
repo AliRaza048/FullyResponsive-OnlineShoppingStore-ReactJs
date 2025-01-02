@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from "react";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Products from './Products';
@@ -8,8 +8,52 @@ import { useCart } from '../AddToCart/CartContext';
 import CarousalOnly2Product from '../Only2ProductCarousal/CarousalOnly2Product';
 import { Link, NavLink} from 'react-router-dom';
 
-export default function CarouselProducts() {
-  
+
+import { DataContext } from "./DataProvider";
+import { useSelector } from "react-redux";
+
+
+function CarouselProducts() {
+
+  const {loading, loadingMore, loadMoreHomeImprovement, loadMoreElectronicCollection } = useContext(DataContext);
+ 
+
+  const {homeImprovement}= useSelector(
+  (state) => state.homeImprovement
+  );
+  const {electronicCollection}= useSelector(
+    (state) => state.electronicCollection
+    );
+    // const {homeImprovement}= useSelector(
+    //   (state) => state.homeImprovement
+    //   );
+
+
+  // Effect to automatically load more products when reaching the bottom of the page (optional)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          loadMoreHomeImprovement();
+          loadMoreElectronicCollection();
+        }
+      },
+      { threshold: 1.0 }
+    );
+
+    // const bottomHomeImprovement = document.getElementById("homeImprovement-bottom");
+    // const bottomElectronicCollection = document.getElementById("electronicCollection-bottom");
+
+    // if (bottomHomeImprovement) observer.observe(bottomHomeImprovement);
+    // if (bottomElectronicCollection) observer.observe(bottomElectronicCollection);
+
+    // return () => {
+    //   if (bottomHomeImprovement) observer.unobserve(bottomHomeImprovement);
+    //   if (bottomElectronicCollection) observer.unobserve(bottomElectronicCollection);
+    // };
+  }, [loading, loadingMore]);
+console.log(electronicCollection)
+console.log(homeImprovement)
   const { addToCart} = useCart();
 
     const productlist1 = topCollection.map((item) => (
@@ -75,9 +119,17 @@ export default function CarouselProducts() {
           <div className="horizontal-line"></div>
         </div>
         <NavLink to="/electronics" className='view_all_electronics_collection_link'>View All</NavLink>
+        
+        {loading ? (
+        <p>Loading...</p>
+      ) : (
         <Carousel responsive={responsive} keyBoardControl={true}>
           {productlist2}
         </Carousel>
+        )}
+        <div id="homeImprovement-bottom" style={{ height: "1px" }}></div>
+  
+        {loadingMore && <p>Loading more products...</p>}
 
 
         <div className="text-container" >
@@ -86,12 +138,21 @@ export default function CarouselProducts() {
           <div className="horizontal-line"></div>
         </div>
         <NavLink to="/home_improvement" className='view_all_home_improvement_link'>View All</NavLink>
+        
+        {loading ? (
+        <p>Loading...</p>
+      ) : (
         <Carousel responsive={responsive} keyBoardControl={true}>
           {productlist3}
         </Carousel>
+         )}
+         <div id="electronicCollection-bottom" style={{ height: "1px" }}></div>
+   
+         {loadingMore && <p>Loading more products...</p>}
 
       </div>
       
       </>
   )
 }
+export default CarouselProducts;
