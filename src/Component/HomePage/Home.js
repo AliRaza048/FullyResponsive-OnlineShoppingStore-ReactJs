@@ -12,7 +12,7 @@ import { doubleproductlistData1, doubleproductlistData2 } from '../Only2ProductC
 import usericon from '../Images/usericon.png';
 import { useAuth } from '../firebase/AuthContext';
 
-// import DataProvider from "../ProductCarousal1/DataProvider";
+import DataProvider from "../ProductCarousal1/DataProvider";
 
 // ----with redux-persist-------
 //  import DataProvider from "../ProductCarousal1/DataProvider";
@@ -44,9 +44,9 @@ export default function Home() {
 
 
 
-      {/* <DataProvider> */}
+      <DataProvider>
       <CarousalProducts />
-      {/* </DataProvider> */}
+      </DataProvider>
 
 
       {/* --------with redux-persist------ */}
