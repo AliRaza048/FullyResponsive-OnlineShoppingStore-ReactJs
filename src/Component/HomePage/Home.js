@@ -14,6 +14,9 @@ import { useAuth } from '../firebase/AuthContext';
 
 import DataProvider from "../ProductCarousal1/DataProvider";
 
+// ----with redux-persist-------
+//  import DataProvider from "../ProductCarousal1/DataProvider";
+
 
 export default function Home() {
   const { cartItemCount } = useCart();
@@ -39,9 +42,17 @@ export default function Home() {
         <ImageSlider />
       </div>
 
+
+
       <DataProvider>
       <CarousalProducts />
       </DataProvider>
+
+
+      {/* --------with redux-persist------ */}
+      {/* <DataProvider>
+      <CarousalProducts />
+      </DataProvider> */}
     </>
   );
 }
