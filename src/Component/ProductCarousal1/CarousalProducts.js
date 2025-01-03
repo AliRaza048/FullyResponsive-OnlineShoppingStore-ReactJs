@@ -208,16 +208,16 @@ function CarouselProducts() {
       { threshold: 1.0 }
     );
 
-    // const bottomHomeImprovement = document.getElementById("homeImprovement-bottom");
-    // const bottomElectronicCollection = document.getElementById("electronicCollection-bottom");
+    const bottomHomeImprovement = document.getElementById("homeImprovement-bottom");
+    const bottomElectronicCollection = document.getElementById("electronicCollection-bottom");
 
-    // if (bottomHomeImprovement) observer.observe(bottomHomeImprovement);
-    // if (bottomElectronicCollection) observer.observe(bottomElectronicCollection);
+    if (bottomHomeImprovement) observer.observe(bottomHomeImprovement);
+    if (bottomElectronicCollection) observer.observe(bottomElectronicCollection);
 
-    // return () => {
-    //   if (bottomHomeImprovement) observer.unobserve(bottomHomeImprovement);
-    //   if (bottomElectronicCollection) observer.unobserve(bottomElectronicCollection);
-    // };
+    return () => {
+      if (bottomHomeImprovement) observer.unobserve(bottomHomeImprovement);
+      if (bottomElectronicCollection) observer.unobserve(bottomElectronicCollection);
+    };
   }, [loading, loadingMore]);
 console.log(electronicCollection)
 console.log(homeImprovement)
