@@ -32,6 +32,9 @@ import Receipt from '../src/Component/Receipt/Receipt';
 
 
 
+import DataProvider from "../src/Component/ProductCarousal1/DataProvider";
+
+
 function Main() {
 
   useEffect(() => {
@@ -95,6 +98,7 @@ function Main() {
 
     <CartProvider>
     <AuthProvider>
+      <DataProvider>
       <Routes>
         <Route path='/' Component={Home} />
         <Route path='/contact-us' Component={Contact} />
@@ -117,6 +121,7 @@ function Main() {
         <Route path='/about-us' Component={AboutUs} />
         <Route path='/receipt' element={<Receipt />} />
       </Routes>
+      </DataProvider>
       </AuthProvider>
     </CartProvider>
         

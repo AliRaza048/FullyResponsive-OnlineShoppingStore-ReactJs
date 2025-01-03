@@ -126,7 +126,7 @@
 
 
 //-----Original------
-import React, {useEffect} from 'react'
+import React, {useEffect, useContext} from 'react'
 import {electronicCollection} from '../ProductCarousal1/data'
 import Products from '../ProductCarousal1/Products';
 import { useCart } from '../AddToCart/CartContext';
@@ -141,9 +141,41 @@ import { doubleproductlistData1, doubleproductlistData2 } from '../Only2ProductC
 import usericon from '../Images/usericon.png';
 import { useAuth } from '../firebase/AuthContext';
 
+
+import { DataContext } from "../ProductCarousal1/DataProvider";
+
+
 export default function Electronicscollection() {
 
-    const ElectronicscollectionallProducts = [...electronicCollection];
+    const {homeImprovementData, electronicCollectionData, loading, loadingMore, loadMoreHomeImprovement, loadMoreElectronicCollection } = useContext(DataContext);
+     
+      // Effect to automatically load more products when reaching the bottom of the page (optional)
+      useEffect(() => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            if (entries[0].isIntersecting) {
+              loadMoreHomeImprovement();
+              loadMoreElectronicCollection();
+            }
+          },
+          { threshold: 1.0 }
+        );
+    
+        const bottomHomeImprovement = document.getElementById("homeImprovement-bottom");
+        const bottomElectronicCollection = document.getElementById("electronicCollection-bottom");
+    
+        if (bottomHomeImprovement) observer.observe(bottomHomeImprovement);
+        if (bottomElectronicCollection) observer.observe(bottomElectronicCollection);
+    
+        return () => {
+          if (bottomHomeImprovement) observer.unobserve(bottomHomeImprovement);
+          if (bottomElectronicCollection) observer.unobserve(bottomElectronicCollection);
+        };
+      }, [loading, loadingMore]);
+
+
+    const ElectronicscollectionallProducts = [...electronicCollectionData];
+    // const ElectronicscollectionallProducts = [...electronicCollection];
     const { addToCart} = useCart();
     const { cartItemCount } = useCart();
 
@@ -175,7 +207,8 @@ export default function Electronicscollection() {
     <>
        <div className='Part2'>
             <div style={{display:'flex'}}>
-            <Searchproduct productData={[...topCollection, ...electronicCollection, ...homeImprovement, ...doubleproductlistData1, ...doubleproductlistData2]} />
+            <Searchproduct productData={[...topCollection, ...electronicCollectionData, ...homeImprovementData, ...doubleproductlistData1, ...doubleproductlistData2]} />
+            {/* <Searchproduct productData={[...topCollection, ...electronicCollection, ...homeImprovement, ...doubleproductlistData1, ...doubleproductlistData2]} /> */}
             {/* <Searchproduct productData={[...productlistData2]} /> */}
                 <img src={searchicon} alt="SearchIconError" style={{width:'2.5vmax', height:'2vmax', marginBottom:'3.5px'}}/>
             </div>
@@ -189,7 +222,10 @@ export default function Electronicscollection() {
         </div>
 
         <div className="view-all-products">
-            {ElectronicscollectionallProducts.map((item) => (
+        {loading ? (
+        <p>Loading...</p>
+      ) : (
+            ElectronicscollectionallProducts.map((item) => (
                 <Products
                     key={item.id}
                     id={item.id}
@@ -200,7 +236,11 @@ export default function Electronicscollection() {
                     addToCart={addToCart}
                     quantity={item.quantity}
                 />
-            ))}
+            ))
+        )}
+        <div id="electronicCollection-bottom" style={{ height: "1px" }}></div>
+  
+        {loadingMore}
         </div>
     </>
   )

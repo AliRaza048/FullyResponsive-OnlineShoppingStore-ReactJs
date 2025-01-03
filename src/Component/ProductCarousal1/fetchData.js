@@ -20,9 +20,9 @@ export const fetchCollectionsData = async (lastDoc = null) => {
 
     // Fetch data from `electronicCollection`
     const electronicCollectionRef = collection(db, "electronicCollection");
-    let electronicCollectionQuery = query(electronicCollectionRef, orderBy("id"), limit(2));
+    let electronicCollectionQuery = query(electronicCollectionRef, orderBy("id"), limit(1));
     if (lastDoc) {
-      electronicCollectionQuery = query(electronicCollectionRef, orderBy("id"), startAfter(lastDoc), limit(2));
+      electronicCollectionQuery = query(electronicCollectionRef, orderBy("id"), startAfter(lastDoc), limit(1));
     }
     const electronicCollectionSnapshot = await getDocs(electronicCollectionQuery);
     const electronicCollectionData = electronicCollectionSnapshot.docs.map((doc) => ({
@@ -46,3 +46,6 @@ export const fetchCollectionsData = async (lastDoc = null) => {
     };
   }
 };
+
+
+
