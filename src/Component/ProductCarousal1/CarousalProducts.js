@@ -296,7 +296,7 @@ console.log(homeImprovement)
         )}
         <div id="homeImprovement-bottom" style={{ height: "1px" }}></div>
   
-        {loadingMore}
+        {loadingMore && <p>Loading more products...</p>}
 
 
         <div className="text-container" >
@@ -315,7 +315,7 @@ console.log(homeImprovement)
          )}
          <div id="electronicCollection-bottom" style={{ height: "1px" }}></div>
    
-         {loadingMore}
+         {loadingMore && <p>Loading more products...</p>}
 
       </div>
       
